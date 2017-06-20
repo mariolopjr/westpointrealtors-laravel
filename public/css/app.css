@@ -1,3 +1,29 @@
+body {
+  background-color: #f3f3f3; }
 
+.add-shadow {
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1); }
+
+a.nav-item.is-tab:active, a.nav-item.is-tab:focus, a.nav-item.is-tab:hover {
+  border-bottom-color: #8bc34a;
+  color: #8bc34a; }
+a.nav-item.is-tab.is-active {
+  border-bottom-color: #8bc34a;
+  color: #8bc34a; }
+
+.index-hero {
+  padding-top: 3.5rem !important; }
+
+.is-bottom-gradient {
+  background-image: linear-gradient(to bottom, #4caf50 0%, #00d1b2 75%, #fff 100%); }
+
+.index-search p:first-of-type {
+  width: 100%; }
+.index-search p input,
+.index-search p a {
+  height: 50px; }
+
+.index-subtitle {
+  margin-top: 3rem; }
 
 /*# sourceMappingURL=app.css.map */

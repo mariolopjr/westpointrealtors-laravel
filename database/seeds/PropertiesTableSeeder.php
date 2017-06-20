@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Building;
+use App\Property;
 
-class BuildingsTableSeeder extends Seeder
+class PropertiesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class BuildingsTableSeeder extends Seeder
      */
     public function run()
     {
-        Building::truncate();
-        factory(Building::class, 100)->create();
+        Property::truncate();
+        factory(Property::class, 100)->create();
     }
 }

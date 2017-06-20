@@ -1,2 +1,47 @@
 // Variables
 @import "variables";
+
+body {
+  background-color: $body-bg;
+}
+
+.add-shadow {
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+}
+
+a.nav-item.is-tab {
+  &:active,
+  &:focus,
+  &:hover {
+    border-bottom-color: $nav-underline;
+    color: $nav-underline;
+  }
+
+  &.is-active {
+    border-bottom-color: $nav-underline;
+    color: $nav-underline;
+  }
+}
+
+.index-hero {
+  padding-top: 3.5rem !important;
+}
+
+.is-bottom-gradient {
+  background-image: linear-gradient(to bottom, $hero-main-bg 0%, #00d1b2 75%, #fff 100%);
+}
+
+.index-search {
+  p:first-of-type {
+    width: 100%;
+  }
+
+  p input,
+  p a {
+    height: 50px;
+  }
+}
+
+.index-subtitle {
+  margin-top: 3rem;
+}

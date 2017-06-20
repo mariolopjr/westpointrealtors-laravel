@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', App\Property::favorite()->active()->get());
 });
 
-Route::get('/listings', 'BuildingController@index');
-Route::get('/listings/{building}', 'BuildingController@show');
+// Properties
+Route::get('/properties', 'PropertyController@index');
+Route::post('/properties', 'PropertyController@store');
+Route::get('/properties/create', 'PropertyController@create');
+Route::get('/properties/{property}', 'PropertyController@show');

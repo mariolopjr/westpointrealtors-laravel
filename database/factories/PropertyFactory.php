@@ -1,10 +1,10 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Building::class, function (Faker\Generator $faker) {
+$factory->define(App\Property::class, function (Faker\Generator $faker) {
     return [
         'title' => $faker->sentence(10, true),
-        'type' => $faker->numberBetween(1, 3),
+        'type' => $faker->numberBetween(1, 4),
         'address' => $faker->address,
         'status' => $faker->numberBetween(1, 5),
         'price' => $faker->randomFloat(2, 1000, 9999999),

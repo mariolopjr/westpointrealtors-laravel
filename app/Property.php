@@ -4,8 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Building extends Model
+class Property extends Model
 {
+
+    protected $guarded = ['user_id'];
+
     public function scopeActive($query, $bool = true)
     {
         return $query->where('active', $bool);

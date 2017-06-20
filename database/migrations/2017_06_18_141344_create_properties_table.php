@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBuildingsTable extends Migration
+class CreatePropertiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBuildingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('buildings', function (Blueprint $table) {
+        Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->integer('type');
@@ -28,7 +28,7 @@ class CreateBuildingsTable extends Migration
             $table->integer('garages');
             $table->date('year');
             $table->double('hoa_fees');
-            $table->boolean('rental');
+            $table->boolean('rental')->default(false);
             $table->boolean('favorite')->default(false);
             $table->boolean('active')->default(true);
             $table->integer('user_id');
@@ -43,6 +43,6 @@ class CreateBuildingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buildings');
+        Schema::dropIfExists('properties');
     }
 }
