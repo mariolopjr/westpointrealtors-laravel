@@ -23,4 +23,9 @@ class Property extends Model
     {
         return $query->where('rental', $bool);
     }
+
+    public function agents()
+    {
+        $this->belongsToMany(User::class);
+    }
 }

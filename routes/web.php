@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('index', App\Property::favorite()->active()->get());
+    $properties = App\Property::latest()->favorite()->active()->get();
+    return view('index', compact('properties'));
 });
 
 // Properties
@@ -20,3 +21,7 @@ Route::get('/properties', 'PropertyController@index');
 Route::post('/properties', 'PropertyController@store');
 Route::get('/properties/create', 'PropertyController@create');
 Route::get('/properties/{property}', 'PropertyController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
