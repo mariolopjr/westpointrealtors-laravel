@@ -24,31 +24,34 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">Thanks for coming back!</h1>
-                <div class="card is-half is-offset-one-quarter">
-                    <div class="card-content">
-                        <p class="title">
-                            “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
+                <div class="card column is-half is-offset-one-quarter add-shadow">
+                    <header class="card-header">
+                        <p class="card-header-title has-text-centered">
+                            Please login
                         </p>
-                        <p class="subtitle">
-                            Jeff Atwood
-                        </p>
-                    </div>
-                    <footer class="card-footer">
-                        <p class="card-footer-item">
-                            <span>
-                                View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-                            </span>
-                        </p>
-                        <p class="card-footer-item">
-                            <span>
-                                Share on <a href="#">Facebook</a>
-                            </span>
-                        </p>
-                    </footer>
-                </div>
-                <form action="/login" class="login-form">
+                    </header>
+                    <div class="card-content has-text-left">
+                        <form class="login-form" role="form" method="POST" action="{{ route('login') }}">
+                            {{ csrf_field() }}
 
-                </form>
+                            <div class="field">
+                                <label class="label" for="email">Email</label>
+                                <p class="control">
+                                    <input class="input" type="email" name="email" id="email" required />
+                                </p>
+                            </div>
+
+                            <div class="field">
+                                <label class="label" for="password">Password</label>
+                                <p class="control">
+                                    <input class="input" type="password" name="password" id="password" required />
+                                </p>
+                            </div>
+
+                            <a type="submit" class="button is-primary">Primary</a>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
 

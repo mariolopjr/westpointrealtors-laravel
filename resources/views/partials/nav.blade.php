@@ -20,7 +20,7 @@
             <a class="nav-item is-tab is-hidden-tablet">Forms</a>
             <a class="nav-item is-tab is-hidden-tablet">Contact</a>
             @if (Auth::guest())
-                <a class="nav-item is-tab" @click="isLoginModalActive = true">Log in</a>
+                <a class="nav-item is-tab" href="{{ url('/login') }}">Log in</a>
             @else
                 <a class="nav-item is-tab">
                     <figure class="image is-16x16" style="margin-right: 8px;">
@@ -28,7 +28,7 @@
                     </figure>
                     Profile
                 </a>
-                <a class="nav-item is-tab">Log out</a>
+                <a class="nav-item is-tab" href="">Log out</a>
             @endif
         </div>
     </div>

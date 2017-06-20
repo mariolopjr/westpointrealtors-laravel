@@ -49,4 +49,8 @@ a.nav-item.is-tab {
 /* Login */
 .login-hero {
   background-color: $hero-login-bg;
+
+  .card-header {
+    box-shadow: 0 1px rgba(10, 10, 10, 0.1);
+  }
 }
