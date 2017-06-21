@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -66,7 +72,7 @@ class PropertyController extends Controller
             'year',
             'hoa_fees'
         ]));
-        $property->user_id = 123456;
+        $property->user_id = auth()->id();
         $property->save();
 
         return redirect('/');

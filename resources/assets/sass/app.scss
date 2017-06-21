@@ -1,18 +1,26 @@
 // Variables
 @import "variables";
+@import "mixins";
 
 body {
   background-color: $body-bg;
 }
 
 /* Globals */
+.hidden {
+  display: none;
+}
 
 .add-shadow {
-  box-shadow: 0 4px 6px rgba(10, 10, 10, 0.2);
+  @include prefix((
+          box-shadow: 0 4px 6px rgba(10, 10, 10, 0.2)
+  ), webkit);
 }
 
 .add-shadow-2x {
-  box-shadow: 0 8px 12px rgba(10, 10, 10, 0.3);
+  @include prefix((
+          box-shadow: 0 8px 12px rgba(10, 10, 10, 0.3)
+  ), webkit);
 }
 
 .square-corners {
@@ -53,6 +61,19 @@ body {
   animation: slide-in-from-bottom-700 1s ease-out;
   transition: all 620ms cubic-bezier(0.26, 1.58, 0.7, 0.9);
   opacity: 1;
+}
+
+/* Equal Card Heights */
+.card-equal-height {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-flow: column nowrap;
+}
+.card-equal-height .card-footer {
+  margin-top: auto;
 }
 
 a.nav-item.is-tab {

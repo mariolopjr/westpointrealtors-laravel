@@ -20,15 +20,18 @@
             <a class="nav-item is-tab is-hidden-tablet">Forms</a>
             <a class="nav-item is-tab is-hidden-tablet">Contact</a>
             @if (Auth::guest())
-                <a class="nav-item is-tab" href="{{ url('/login') }}">Log in</a>
+                <a class="nav-item is-tab" href="{{ url('/login') }}">Login</a>
             @else
                 <a class="nav-item is-tab">
                     <figure class="image is-16x16" style="margin-right: 8px;">
-                        <img src="http://bulma.io/images/jgthms.png">
+                        <img src="{{ Auth::user()->getGravatar() }}">
                     </figure>
-                    Profile
+                    {{ Auth::user()->name }}
                 </a>
-                <a class="nav-item is-tab" href="">Log out</a>
+                <a class="nav-item is-tab" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                <form class="hidden" id="logout-form" action="{{ route('logout') }}" method="POST">
+                    {{ csrf_field() }}
+                </form>
             @endif
         </div>
     </div>

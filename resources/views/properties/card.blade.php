@@ -1,5 +1,5 @@
-<div>
-    <div class="card">
+<div class="column">
+    <div class="card card-equal-height">
         <div class="card-image">
             <figure class="image is-3by2">
                 <img src="http://via.placeholder.com/230x150" alt="Image">
@@ -21,5 +21,10 @@
                 <small>11:09 PM - 1 Jan 2016</small>
             </div>
         </div>
+        <footer class="card-footer">
+            <a class="card-footer-item">Save</a>
+            <a class="card-footer-item">Edit</a>
+            <a class="card-footer-item">Delete</a>
+        </footer>
     </div>
 </div>
