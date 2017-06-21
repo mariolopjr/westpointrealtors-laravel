@@ -24,7 +24,7 @@
                 </h2>
 
                 <div class="columns">
-                    @foreach($properties->slice(0, 4) as $property)
+                    @foreach($properties as $property)
                         @include('properties.card')
                     @endforeach
                 </div>

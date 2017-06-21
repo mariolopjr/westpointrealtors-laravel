@@ -27,6 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function agent()
+    {
+        return $this->belongsTo(Agent::class);
+    }
+
     /**
      * Get either a Gravatar URL or complete image tag for a specified email address.
      *

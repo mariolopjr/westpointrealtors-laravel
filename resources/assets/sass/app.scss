@@ -11,6 +11,12 @@ body {
   display: none;
 }
 
+.hidden-surround {
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .add-shadow {
   @include prefix((
           box-shadow: 0 4px 6px rgba(10, 10, 10, 0.2)
@@ -124,5 +130,36 @@ a.nav-item.is-tab {
   .login-btn {
     height: 3em;
     width: 100%;
+  }
+}
+
+/* Properties */
+.property-nav {
+  background-color: $property-nav-bg;
+  color: #fff;
+
+  a {
+    color: #fff;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .hidden-surround {
+    &::-webkit-input-placeholder {
+      color: #fff;
+    }
+    &::-moz-placeholder {
+      color: #fff;
+    }
+    &:-ms-input-placeholder {
+      color: #fff;
+    }
+    &:-moz-placeholder {
+      color: #fff;
+    }
   }
 }

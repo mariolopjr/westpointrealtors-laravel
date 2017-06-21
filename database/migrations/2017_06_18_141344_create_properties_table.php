@@ -31,7 +31,7 @@ class CreatePropertiesTable extends Migration
             $table->boolean('rental')->default(false);
             $table->boolean('favorite')->default(false);
             $table->boolean('active')->default(true);
-            $table->integer('user_id');
+            $table->integer('agent_id');
             $table->timestamps();
         });
     }

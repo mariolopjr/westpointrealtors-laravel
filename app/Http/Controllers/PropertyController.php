@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Property;
+use App\Repositories\Properties;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
@@ -16,11 +17,12 @@ class PropertyController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param \App\Repositories\Properties $properties
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Properties $properties)
     {
-        $properties = Property::all();
+        $properties = $properties->all();
         return view('properties.index', compact('properties'));
     }
 

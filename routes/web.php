@@ -13,6 +13,18 @@
 
 Route::get('/', function () {
     $properties = App\Property::latest()->favorite()->active()->get();
+
+    if($propertiesCount = count($properties) < 4) {
+        $additionalProperties = App\Property::latest()->favorite(false)->active()->get();
+        $start = random_int(0, count($additionalProperties) - (5 - $propertiesCount));
+        $additionalProperties = $additionalProperties->slice($start, 4 - $propertiesCount);
+
+        foreach ($additionalProperties as $property) {
+            $properties->push($property);
+        }
+    }
+    $properties = $properties->slice(0, 4);
+
     return view('index', compact('properties'));
 });
 
@@ -23,5 +35,3 @@ Route::get('/properties/create', 'PropertyController@create');
 Route::get('/properties/{property}', 'PropertyController@show');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

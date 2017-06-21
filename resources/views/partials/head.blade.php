@@ -9,6 +9,7 @@
 
     <!-- Stylesheets -->
     {!! HTML::style(asset('https://fonts.googleapis.com/css?family=Raleway:100,300,400,600'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
+    {!! HTML::style(asset('https://fonts.googleapis.com/icon?family=Material+Icons'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
     {!! HTML::style(asset('https://unpkg.com/buefy@0.4.0/lib/buefy.css'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
     {!! HTML::style(asset('css/app.css'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
 
