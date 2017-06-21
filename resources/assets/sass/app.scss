@@ -5,8 +5,54 @@ body {
   background-color: $body-bg;
 }
 
+/* Globals */
+
 .add-shadow {
-  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 4px 6px rgba(10, 10, 10, 0.2);
+}
+
+.add-shadow-2x {
+  box-shadow: 0 8px 12px rgba(10, 10, 10, 0.3);
+}
+
+.square-corners {
+  border-radius: 0;
+}
+
+@keyframes slide-in-from-bottom-50 {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(50%) matrix(0.95, 0, 0, 0.95, 0, 80);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+
+@keyframes slide-in-from-bottom-700 {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: translateY(700%) matrix(0.95, 0, 0, 0.95, 0, 80);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+
+.drop-in-transition {
+  animation: slide-in-from-bottom-50 400ms ease-out;
+  transition: all 620ms cubic-bezier(0.26, 1.58, 0.7, 0.9);
+  opacity: 1;
+}
+
+.drop-in-transition-delay2 {
+  animation: slide-in-from-bottom-700 1s ease-out;
+  transition: all 620ms cubic-bezier(0.26, 1.58, 0.7, 0.9);
+  opacity: 1;
 }
 
 a.nav-item.is-tab {
@@ -52,5 +98,10 @@ a.nav-item.is-tab {
 
   .card-header {
     box-shadow: 0 1px rgba(10, 10, 10, 0.1);
+  }
+
+  .login-btn {
+    height: 3em;
+    width: 100%;
   }
 }
