@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAgentsTable extends Migration
+class CreateAgentPropertyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateAgentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('agents', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unique;
-            $table->timestamps();
+        Schema::create('agent_property', function (Blueprint $table) {
+            $table->integer('agent_id');
+            $table->integer('property_id');
+            $table->primary(['agent_id', 'property_id']);
         });
     }
 
@@ -27,6 +27,6 @@ class CreateAgentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('agents');
+        Schema::dropIfExists('agent_property');
     }
 }

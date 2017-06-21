@@ -26,6 +26,6 @@ class Property extends Model
 
     public function agents()
     {
-        $this->belongsToMany(User::class);
+        return $this->belongsToMany(Agent::class);
     }
 }

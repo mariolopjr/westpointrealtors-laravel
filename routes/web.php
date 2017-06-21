@@ -34,4 +34,8 @@ Route::post('/properties', 'PropertyController@store');
 Route::get('/properties/create', 'PropertyController@create');
 Route::get('/properties/{property}', 'PropertyController@show');
 
+// Agents
+Route::get('/agents', 'AgentController@index');
+Route::get('/agents/{agent}', 'AgentController@show');
+
 Auth::routes();

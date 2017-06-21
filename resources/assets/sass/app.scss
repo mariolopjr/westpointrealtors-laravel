@@ -69,6 +69,17 @@ body {
   opacity: 1;
 }
 
+.house-footer {
+  font-size: 13px;
+  font-weight: 500;
+  color: #828282;
+  margin-left: 5px;
+}
+
+.is-8 {
+  font-size: 0.8rem;
+}
+
 /* Equal Card Heights */
 .card-equal-height {
   display: -webkit-box;
@@ -117,6 +128,10 @@ a.nav-item.is-tab {
 
 .index-subtitle {
   margin-top: 3rem;
+}
+
+.home-card .card-footer-item {
+  border-right: 0;
 }
 
 /* Login */
