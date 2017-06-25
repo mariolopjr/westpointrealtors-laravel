@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    $properties = App\Property::latest()->favorite()->active()->get();
+    $properties = App\Property::latest()->favorite()->active()->with('status')->get();
 
     if($propertiesCount = count($properties) < 4) {
         $additionalProperties = App\Property::latest()->favorite(false)->active()->get();

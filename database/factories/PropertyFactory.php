@@ -6,7 +6,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker) {
         'title' => $faker->sentence(10, true),
         'type' => $faker->numberBetween(1, 4),
         'address' => $faker->address,
-        'status' => $faker->numberBetween(1, 5),
+        'status_id' => $faker->numberBetween(1, 5),
         'price' => $faker->randomFloat(2, 1000, 9999999),
         'description' => $faker->paragraphs(5, true),
         'home_size' => $faker->randomFloat(2, 100, 99999),

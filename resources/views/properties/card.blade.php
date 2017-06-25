@@ -6,6 +6,7 @@
                     <img src="http://via.placeholder.com/230x150" alt="Image">
                 </figure>
             </div>
+            <small class="has-text-right">{{ $property->status->name }}</small>
             <div class="card-content">
                 <div class="media">
                     <div class="media-content">
@@ -15,9 +16,10 @@
                 </div>
 
                 <div class="content">
-                    ${{ money_format('%(#4n', $property->price) }}
+                    <span class="card-price">
+                        ${{ number_format($property->price, 2) }}
+                    </span>
                     <br>
-                    <small>{{ $property->status }}</small>
                 </div>
             </div>
             <footer class="card-footer">

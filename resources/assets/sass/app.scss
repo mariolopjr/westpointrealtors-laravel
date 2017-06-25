@@ -126,12 +126,24 @@ a.nav-item.is-tab {
   }
 }
 
+.home-card .card > small {
+  margin: 10px 10px 0;
+}
+
+.home-card .card-content {
+  padding-top: 1rem;
+}
+
 .index-subtitle {
   margin-top: 3rem;
 }
 
 .home-card .card-footer-item {
   border-right: 0;
+}
+
+.card-price {
+  font-size: 1.3rem;
 }
 
 /* Login */

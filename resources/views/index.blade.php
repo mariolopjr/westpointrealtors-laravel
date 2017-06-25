@@ -19,7 +19,7 @@
                     </div>
                 </form>
 
-                <h2 class="subtitle index-subtitle">
+                <h2 class="title index-subtitle">
                     Our favorite properties
                 </h2>
 
@@ -28,6 +28,13 @@
                         @include('properties.card')
                     @endforeach
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="hero is-small">
+        <div class="container has-text-centered">
+            <div class="hero-body">
+                <h2 class="title">Our affiliates</h2>
             </div>
         </div>
     </section>

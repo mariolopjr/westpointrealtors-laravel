@@ -28,4 +28,9 @@ class Property extends Model
     {
         return $this->belongsToMany(Agent::class);
     }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
 }

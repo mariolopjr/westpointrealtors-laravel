@@ -18,7 +18,7 @@ class CreatePropertiesTable extends Migration
             $table->string('title');
             $table->integer('type');
             $table->string('address');
-            $table->integer('status');
+            $table->integer('status_id');
             $table->double('price');
             $table->longText('description');
             $table->double('home_size');
