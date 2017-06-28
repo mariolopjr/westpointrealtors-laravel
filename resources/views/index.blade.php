@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <section class="hero is-large is-bottom-gradient">
+    <section class="hero is-large">
         <div class="hero-body index-hero">
             <div class="container has-text-centered">
                 <form>

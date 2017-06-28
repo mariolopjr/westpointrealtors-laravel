@@ -10,4 +10,9 @@ class Properties
     {
         return Property::all();
     }
+
+    public function latest()
+    {
+        return Property::latest();
+    }
 }

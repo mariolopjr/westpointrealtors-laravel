@@ -8,6 +8,9 @@
             <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/properties') is-active @endif" href="{{ url('/properties') }}">Properties</a>
             <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/forms') is-active @endif" href="{{ url('/forms') }}">Forms</a>
             <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/contact') is-active @endif" href="{{ url('/contact') }}">Contact</a>
+            @if(Auth::user() && Auth::user()->isAdmin())
+                <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/admin') is-active @endif" href="{{ url('/admin') }}">Admin</a>
+            @endif
         </div>
         <span class="nav-toggle">
             <span></span>

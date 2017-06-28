@@ -22,7 +22,7 @@ class PropertyController extends Controller
      */
     public function index(Properties $properties)
     {
-        $properties = $properties->all();
+        $properties = $properties->latest()->with('status')->paginate(10);
         return view('properties.index', compact('properties'));
     }
 

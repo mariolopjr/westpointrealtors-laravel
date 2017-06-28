@@ -13,14 +13,13 @@
             </div>
             <div class="nav-right">
                 <div class="nav-item">Sort By:</div>
-                <a class="nav-item is-tab">Home</a>
-                <a class="nav-item is-tab">Properties</a>
-                <a class="nav-item is-tab">Forms</a>
-                <a class="nav-item is-tab">Contact</a>
+                <a class="nav-item is-tab"><i class="material-icons">list</i></a>
+                <a class="nav-item is-tab"><i class="material-icons">map</i></a>
             </div>
         </div>
     </nav>
     @foreach($properties as $property)
-        <li>{{ $property->title }}</li>
+        @include('properties.list')
     @endforeach
+    {{ $properties->links() }}
 @endsection
