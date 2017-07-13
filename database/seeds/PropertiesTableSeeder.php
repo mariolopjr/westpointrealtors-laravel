@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Property;
 
+use Faker\Factory as Faker;
+
 class PropertiesTableSeeder extends Seeder
 {
     /**
@@ -13,6 +15,12 @@ class PropertiesTableSeeder extends Seeder
     public function run()
     {
         Property::truncate();
-        factory(Property::class, 100)->create();
+        factory(Property::class, 100)->create()->each(function($property) {
+            $faker = Faker::create();
+            $path = 'public/storage/images' . $faker->image($dir = public_path('storage/images'), $width = 640, $height = 480, 'city', false);
+            $property
+                ->addMedia($path)
+                ->toMediaCollection();
+        });
     }
 }
