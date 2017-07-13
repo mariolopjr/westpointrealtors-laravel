@@ -18,8 +18,16 @@
             </div>
         </div>
     </nav>
-    @foreach($properties as $property)
-        @include('properties.list')
-    @endforeach
+    <div class="container property-list">
+        @foreach($properties as $property)
+            @if(($loop->iteration - 1) % 4 == 0 || $loop->first)
+                <div class="columns">
+            @endif
+            @include('properties.card')
+            @if($loop->iteration % 4 == 0 || $loop->last)
+                </div>
+            @endif
+        @endforeach
+    </div>
     {{ $properties->links() }}
 @endsection
