@@ -196,3 +196,28 @@ a.nav-item.is-tab {
   margin-bottom: 25px;
   margin-top: 25px;
 }
+
+// Pagination
+.pagination {
+  padding-bottom: 15px;
+
+  &-previous {
+    color: $pagination-outline;
+    margin-left: 15px;
+  }
+
+  &-next {
+    color: $pagination-outline;
+    margin-right: 15px;
+  }
+
+  .pagination-link {
+    color: $pagination-outline;
+
+    &.is-current {
+      border-color: $pagination-fill;
+      background-color: $pagination-fill;
+      color: #fff;
+    }
+  }
+}
