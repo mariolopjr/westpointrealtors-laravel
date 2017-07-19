@@ -204,15 +204,34 @@ a.nav-item.is-tab {
   &-previous {
     color: $pagination-outline;
     margin-left: 15px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: #dbd;
+    }
   }
 
   &-next {
     color: $pagination-outline;
     margin-right: 15px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: #dbd;
+    }
   }
 
   .pagination-link {
     color: $pagination-outline;
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: #dbd;
+      color: #000;
+    }
 
     &.is-current {
       border-color: $pagination-fill;

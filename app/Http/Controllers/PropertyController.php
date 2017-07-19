@@ -124,4 +124,10 @@ class PropertyController extends Controller
     {
         //
     }
+
+    public function search(Request $request, User $user)
+    {
+        $user = $user->newQuery();
+
+    }
 }

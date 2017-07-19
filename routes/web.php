@@ -32,6 +32,7 @@ Route::get('/', function () {
 Route::get('/properties', 'PropertyController@index');
 Route::post('/properties', 'PropertyController@store');
 Route::get('/properties/create', 'PropertyController@create');
+Route::get('properties/search', 'PropertyController@search');
 Route::get('/properties/{property}', 'PropertyController@show');
 
 // Agents
