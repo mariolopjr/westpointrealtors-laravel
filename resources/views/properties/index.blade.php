@@ -29,5 +29,5 @@
             @endif
         @endforeach
     </div>
-    {{ $properties->links() }}
+    {{ $properties->appends(Request::except('page'))->links() }}
 @endsection

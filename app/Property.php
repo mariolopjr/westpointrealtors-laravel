@@ -32,6 +32,11 @@ class Property extends Model implements HasMediaConversions
         return $query->where('rental', $bool);
     }
 
+    public function scopeStatus($query, $status)
+    {
+        return $query->where('status', $status);
+    }
+
     public function agents()
     {
         return $this->belongsToMany(Agent::class);

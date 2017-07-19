@@ -20,9 +20,14 @@ class PropertyController extends Controller
      * @param \App\Repositories\Properties $properties
      * @return \Illuminate\Http\Response
      */
-    public function index(Properties $properties)
+    public function index(Request $request, Properties $properties)
     {
-        $properties = $properties->latest()->with('status')->paginate(16);
+        $properties = $properties->latest()->with('status');
+
+        $properties = $request->has('status') ? $properties->where('status', $request->input('status')) : $properties;
+        $properties = $request->has('active') ? $properties->active($request->input('active')) : $properties;
+
+        $properties = $properties->paginate(16);
         return view('properties.index', compact('properties'));
     }
 
