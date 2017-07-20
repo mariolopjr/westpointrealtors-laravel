@@ -135,7 +135,8 @@ a.nav-item.is-tab {
   padding-top: 1rem;
 }
 
-.card .media-content p.title {
+.card .media-content p.title,
+.card .media-content p.subtitle {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;

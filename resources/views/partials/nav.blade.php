@@ -5,7 +5,7 @@
                 West Point Real Estate
             </a>
             <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '') is-active @endif" href="{{ url('/') }}">Home</a>
-            <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/properties') is-active @endif" href="{{ url('/properties') }}">Properties</a>
+            <a class="nav-item is-tab is-hidden-mobile @if(substr(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)), 0, 11) == '/properties') is-active @endif" href="{{ url('/properties') }}">Properties</a>
             <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/forms') is-active @endif" href="{{ url('/forms') }}">Forms</a>
             <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/contact') is-active @endif" href="{{ url('/contact') }}">Contact</a>
             @if(Auth::user() && Auth::user()->isAdmin())

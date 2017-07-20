@@ -22,11 +22,16 @@ class PropertyController extends Controller
      */
     public function index(Request $request, Properties $properties)
     {
+        // Get all latest properties with status relationship
         $properties = $properties->latest()->with('status');
 
-        $properties = $request->has('status') ? $properties->statusName($request->input('status')) : $properties->statusNotName('Sold');
+        // Apply filters
+        $properties = $request->has('status') ? $properties->statusName($request->input('status')) : $properties->statusNotName('Sold'); // By default, return all but sold properties
         $properties = $request->has('bedrooms') && $request->has('brl') ? $properties->where('bedrooms', $this->conditionalToSymbol($request->input('brl')), $request->input('bedrooms')) : $properties;
-        $properties = $request->has('active') ? $properties->active($request->input('active')) : $properties->active();
+        $properties = $request->has('active') ? $properties->active($request->input('active')) : $properties->active(); // By default, return only active properties
+
+        // Apply sorting
+        $properties = $request->has('priceasc') && $request->input('priceasc') === "y" ? $properties->orderBy('price', 'asc') : $properties->orderBy('price', 'desc');
 
         $properties = $properties->paginate(16);
         return view('properties.index', compact('properties'));
