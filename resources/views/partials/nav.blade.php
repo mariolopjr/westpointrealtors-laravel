@@ -22,9 +22,10 @@
             <a class="nav-item is-tab is-hidden-tablet">Properties</a>
             <a class="nav-item is-tab is-hidden-tablet">Forms</a>
             <a class="nav-item is-tab is-hidden-tablet">Contact</a>
-            @if (Auth::guest())
+            @guest
                 <a class="nav-item is-tab" href="{{ url('/login') }}">Login</a>
-            @else
+            @endauth
+            @auth
                 <a class="nav-item is-tab">
                     <figure class="image is-16x16" style="margin-right: 8px;">
                         <img src="{{ Auth::user()->getGravatar() }}">
@@ -35,7 +36,7 @@
                 <form class="hidden" id="logout-form" action="{{ route('logout') }}" method="POST">
                     {{ csrf_field() }}
                 </form>
-            @endif
+            @endauth
         </div>
     </div>
 </nav>
