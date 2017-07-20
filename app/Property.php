@@ -39,6 +39,13 @@ class Property extends Model implements HasMediaConversions
         });
     }
 
+    public function scopeStatusNotName($query, $status)
+    {
+        return Property::whereHas('status', function($query) use ($status) {
+            $query->where('name', '<>', $status);
+        });
+    }
+
     public function agents()
     {
         return $this->belongsToMany(Agent::class);
