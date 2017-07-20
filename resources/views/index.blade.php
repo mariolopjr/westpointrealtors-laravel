@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <section class="hero is-large">
+    <section class="hero is-small">
         <div class="hero-body index-hero">
             <div class="container has-text-centered">
                 <form>
@@ -12,7 +12,7 @@
                             </p>
                             <p class="control">
                                 <a class="button is-info">
-                                    Find
+                                    <i class="fa fa-search" aria-hidden="true"></i> Find
                                 </a>
                             </p>
                         </div>

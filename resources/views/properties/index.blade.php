@@ -4,7 +4,7 @@
     <nav class="nav has-shadow property-nav">
         <div class="container">
             <div class="nav-left">
-                <div class="nav-item"><span class="icon"><i class="material-icons">search</i></span></div>
+                <div class="nav-item"><span class="icon"><i class="fa fa-search" aria-hidden="true"></i></span></div>
                 <form>
                     <div class="nav-item">
                         <input class="input hidden-surround" type="text" name="search" id="search" placeholder="  Search by..." />

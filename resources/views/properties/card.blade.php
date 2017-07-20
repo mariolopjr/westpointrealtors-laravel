@@ -15,7 +15,7 @@
                     </div>
                 </div>
 
-                <div class="content">
+                <div class="content has-text-centered">
                     <span class="card-price">
                         ${{ number_format($property->price, 2) }}
                     </span>
@@ -24,16 +24,16 @@
             </div>
             <footer class="card-footer">
                 <div class="card-footer-item">
-                    <i class="material-icons">weekend</i> <span class="house-footer">{{ $property->bedrooms }}</span>
+                    <i class="fa fa-bed" aria-hidden="true"></i> <span class="house-footer">{{ $property->bedrooms }}</span>
                 </div>
                 <div class="card-footer-item">
-                    <i class="material-icons">hotel</i> <span class="house-footer">{{ $property->bathrooms }}</span>
+                    <i class="fa fa-shower"></i> <span class="house-footer">{{ $property->bathrooms }}</span>
                 </div>
                 <div class="card-footer-item">
-                    <i class="material-icons">directions_car</i> <span class="house-footer">{{ $property->garages }}</span>
+                    <i class="fa fa-car"></i> <span class="house-footer">{{ $property->garages }}</span>
                 </div>
                 <div class="card-footer-item">
-                    <i class="material-icons">favorite_border</i>
+                    <i class="fa fa-heart-o"></i>
                 </div>
             </footer>
         </div>
