@@ -1,4 +1,4 @@
-<div class="column home-card">
+<div class="column home-card is-one-quarter">
     <a href="">
         <div class="card card-equal-height">
             <div class="card-image">
@@ -10,7 +10,7 @@
             <div class="card-content">
                 <div class="media">
                     <div class="media-content">
-                        <p class="title is-6">{{ substr($property->title, 0, 45) . "..." }}</p>
+                        <p class="title is-6">{{ $property->title }}</p>
                         <p class="subtitle is-8">{{ $property->address }}</p>
                     </div>
                 </div>

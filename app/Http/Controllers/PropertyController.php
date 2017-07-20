@@ -24,7 +24,8 @@ class PropertyController extends Controller
     {
         $properties = $properties->latest()->with('status');
 
-        $properties = $request->has('status') ? $properties->where('status', $request->input('status')) : $properties;
+        $properties = $request->has('status') ? $properties->statusName($request->input('status')) : $properties;
+        $properties = $request->has('bedrooms') && $request->has('brl') ? $properties->where('bedrooms', $this->conditionalToSymbol($request->input('brl')), $request->input('bedrooms')) : $properties;
         $properties = $request->has('active') ? $properties->active($request->input('active')) : $properties;
 
         $properties = $properties->paginate(16);
@@ -130,9 +131,29 @@ class PropertyController extends Controller
         //
     }
 
-    public function search(Request $request, User $user)
+    public function conditionalToSymbol($conditional)
     {
-        $user = $user->newQuery();
+        switch($conditional) {
+            case "gt":
+                return ">";
 
+            case "gte":
+                return ">=";
+
+            case "eq":
+                return "=";
+
+            case "lt":
+                return "<";
+
+            case "lte":
+                return "<=";
+
+            case "neq":
+                return "<>";
+
+            default:
+                return "=";
+        }
     }
 }

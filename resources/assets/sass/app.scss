@@ -135,6 +135,13 @@ a.nav-item.is-tab {
   padding-top: 1rem;
 }
 
+.card .media-content p.title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 .index-subtitle {
   margin-top: 3rem;
 }
