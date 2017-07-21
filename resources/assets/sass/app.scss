@@ -156,6 +156,14 @@ a.nav-item.is-tab {
   font-size: 1.3rem;
 }
 
+.favorite-icon {
+    cursor: pointer;
+
+    &:hover .fa-heart-o:before {
+        content: '\f004';
+    }
+}
+
 /* Login */
 .login-hero {
   background-color: $hero-login-bg;
@@ -172,7 +180,7 @@ a.nav-item.is-tab {
 
 /* Properties */
 .property-nav {
-  background-color: $property-nav-bg;
+  background-color: #00d1b2;
   color: #fff;
 
   a {
