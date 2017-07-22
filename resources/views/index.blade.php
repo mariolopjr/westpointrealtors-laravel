@@ -15,6 +15,15 @@
                                     <i class="fa fa-search" aria-hidden="true"></i> Find
                                 </a>
                             </p>
+                            <div class="search-advanced columns hidden">
+                                <div class="column is-half"></div>
+                                <div class="column is-half"></div>
+                                <div class="column is-half"></div>
+                                <div class="column is-half"></div>
+                                <div class="column is-half"></div>
+                                <div class="column is-half"></div>
+                                <div class="column"></div>
+                            </div>
                         </div>
                     </div>
                 </form>

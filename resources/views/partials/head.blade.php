@@ -16,3 +16,4 @@
     @yield('addStylesheets')
 </head>
 <body>
+<div id="app">

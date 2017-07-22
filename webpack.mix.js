@@ -15,8 +15,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.browserSync({
-    proxy: nginx
-    host: westpoint.dev
-    open: false
+    proxy: westpoint.dev
 });
 
