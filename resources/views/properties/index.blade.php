@@ -1,20 +1,26 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <nav class="nav has-shadow property-nav">
+    <nav class="navbar has-shadow property-nav">
         <div class="container">
-            <div class="nav-left">
-                <div class="nav-item"><span class="icon"><i class="fa fa-search" aria-hidden="true"></i></span></div>
-                <form>
-                    <div class="nav-item">
-                        <input class="input hidden-surround" type="text" name="search" id="search" placeholder="  Search by..." />
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <span class="icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
                     </div>
-                </form>
-            </div>
-            <div class="nav-right">
-                <div class="nav-item">Sort By:</div>
-                <a class="nav-item is-tab"><i class="material-icons">list</i></a>
-                <a class="nav-item is-tab"><i class="material-icons">map</i></a>
+                    <form>
+                        <div class="navbar-item">
+                            <input class="input hidden-surround" type="text" name="search" id="search" placeholder="  Search by..." />
+                        </div>
+                    </form>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">Sort By:</div>
+                    <a class="navbar-item is-tab"><i class="material-icons">list</i></a>
+                    <a class="navbar-item is-tab"><i class="material-icons">map</i></a>
+                </div>
             </div>
         </div>
     </nav>

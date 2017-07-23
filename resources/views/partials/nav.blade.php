@@ -16,13 +16,13 @@
             <a class="navbar-item" href="{{ url('/') }}">
                 Home
             </a>
-            <a class="navbar-item" href=""{{ url('/properties') }}>
+            <a class="navbar-item" href="{{ url('/properties') }}">
                 Properties
             </a>
-            <a class="navbar-item" href=""{{ url('/forms') }}>
+            <a class="navbar-item" href="{{ url('/forms') }}">
                 Forms
             </a>
-            <a class="navbar-item" href=""{{ url('/contact') }}>
+            <a class="navbar-item" href="{{ url('/contact') }}">
                 Contact
             </a>
         </div>
