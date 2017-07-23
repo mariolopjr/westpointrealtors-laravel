@@ -1,42 +1,68 @@
-<nav class="nav has-shadow">
-    <div class="container">
-        <div class="nav-left">
-            <a class="nav-item" href="{{ url('/') }}">
-                West Point Real Estate
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{ url('/') }}">
+            West Point Real Estate
+        </a>
+
+        <div class="navbar-burger burger" data-target="main-nav">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div id="main-nav" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="{{ url('/') }}">
+                Home
             </a>
-            <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '') is-active @endif" href="{{ url('/') }}">Home</a>
-            <a class="nav-item is-tab is-hidden-mobile @if(substr(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)), 0, 11) == '/properties') is-active @endif" href="{{ url('/properties') }}">Properties</a>
-            <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/forms') is-active @endif" href="{{ url('/forms') }}">Forms</a>
-            <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/contact') is-active @endif" href="{{ url('/contact') }}">Contact</a>
-            @if(Auth::user() && Auth::user()->isAdmin())
-                <a class="nav-item is-tab is-hidden-mobile @if(substr(request()->fullUrl(), strpos(request()->getUri(), "/", 7)) == '/admin') is-active @endif" href="{{ url('/admin') }}">Admin</a>
-            @endif
+            <a class="navbar-item" href=""{{ url('/properties') }}>
+                Properties
+            </a>
+            <a class="navbar-item" href=""{{ url('/forms') }}>
+                Forms
+            </a>
+            <a class="navbar-item" href=""{{ url('/contact') }}>
+                Contact
+            </a>
         </div>
-        <span class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-        <div class="nav-right nav-menu">
-            <a class="nav-item is-tab is-hidden-tablet is-active">Home</a>
-            <a class="nav-item is-tab is-hidden-tablet">Properties</a>
-            <a class="nav-item is-tab is-hidden-tablet">Forms</a>
-            <a class="nav-item is-tab is-hidden-tablet">Contact</a>
-            @guest
-                <a class="nav-item is-tab" href="{{ url('/login') }}">Login</a>
-            @endauth
-            @auth
-                <a class="nav-item is-tab">
-                    <figure class="image is-16x16" style="margin-right: 8px;">
-                        <img src="{{ Auth::user()->getGravatar() }}">
-                    </figure>
-                    {{ Auth::user()->name }}
+        <div class="navbar-end">
+        @guest
+            <a class="nav-item is-tab" href="{{ url('/login') }}">Login</a>
+        @endauth
+        @auth
+        <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-link">
+                <figure class="image is-16x16" style="margin-right: 8px;">
+                    <img src="{{ Auth::user()->getGravatar() }}">
+                </figure>
+                {{ Auth::user()->name }}
+            </div>
+
+            <div class="navbar-dropdown">
+                @if(Auth::user() && Auth::user()->isAdmin())
+                    <a class="navbar-item" href="{{ url('/admin') }}">
+                        Admin
+                    </a>
+                @endif
+                <a class="navbar-item" href="">
+                    Profile
                 </a>
-                <a class="nav-item is-tab" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                <form class="hidden" id="logout-form" action="{{ route('logout') }}" method="POST">
-                    {{ csrf_field() }}
-                </form>
-            @endauth
+                <hr class="navbar-divider">
+                <a
+                    class="navbar-item"
+                    href="{{ route('logout')  }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"
+                    >
+                    Logout
+                </a>
+            </div>
         </div>
+        <form class="hidden" id="logout-form" action="{{ route('logout') }}" method="POST">
+            {{ csrf_field() }}
+        </form>
+    @endauth
+</div>
     </div>
 </nav>

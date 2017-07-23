@@ -1851,10 +1851,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         axios.get('/properties/status').then(function (response) {
             return _this.options = response.data['statuses'];
         });
-
-        //console.log(this.options);
-
-        //this.options = ['list', 'of', 'options'];
     }
 });
 

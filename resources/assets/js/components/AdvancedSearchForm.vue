@@ -41,10 +41,6 @@ export default {
         axios
             .get('/properties/status')
             .then(response => this.options = response.data['statuses']);
-
-        //console.log(this.options);
-
-        //this.options = ['list', 'of', 'options'];
     }
 }
 </script>

@@ -5,6 +5,7 @@
         <div class="hero-body index-hero">
             <div class="container has-text-centered">
                 <form>
+                    {{ csrf_field() }}
                     <div class="column is-half is-offset-one-quarter index-search">
                         <div class="field has-addons add-shadow">
                             <p class="control">
