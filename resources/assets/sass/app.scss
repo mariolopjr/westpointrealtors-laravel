@@ -7,6 +7,10 @@ body {
 }
 
 /* Globals */
+[v-cloak] {
+  display: none;
+}
+
 .hidden {
   display: none !important;
 }
@@ -73,9 +77,12 @@ body {
 /* Advanced Search */
 .search-advanced {
   padding: 20px 25px 35px;
-  position: absolute;
 }
 
+.multiselect__tags-wrap .tag {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
 
 .house-footer {
   font-size: 13px;
@@ -165,11 +172,11 @@ a.nav-item.is-tab {
 }
 
 .favorite-icon {
-    cursor: pointer;
+  cursor: pointer;
 
-    &:hover .fa-heart-o:before {
-        content: '\f004';
-    }
+  &:hover .fa-heart-o:before {
+    content: '\f004';
+  }
 }
 
 /* Login */

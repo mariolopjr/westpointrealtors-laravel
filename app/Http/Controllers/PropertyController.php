@@ -11,7 +11,7 @@ class PropertyController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'status']);
     }
 
     /**
@@ -134,6 +134,12 @@ class PropertyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function status()
+    {
+        $statuses = \App\Status::all();
+        return compact('statuses');
     }
 
     public function conditionalToSymbol($conditional)
