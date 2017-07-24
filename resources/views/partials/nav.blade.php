@@ -28,7 +28,7 @@
         </div>
         <div class="navbar-end">
         @guest
-            <a class="nav-item is-tab" href="{{ url('/login') }}">Login</a>
+            <a class="navbar-item" href="{{ url('/login') }}">Login</a>
         @endauth
         @auth
         <div class="navbar-item has-dropdown is-hoverable">

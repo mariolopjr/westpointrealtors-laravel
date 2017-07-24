@@ -1830,6 +1830,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1841,15 +1859,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            value: null,
-            options: []
+            status: null,
+            statuses: [],
+            type: null,
+            types: []
         };
     },
     mounted: function mounted() {
         var _this = this;
 
         axios.get('/properties/status').then(function (response) {
-            return _this.options = response.data['statuses'];
+            return _this.statuses = response.data['statuses'];
+        });
+
+        axios.get('/properties/type').then(function (response) {
+            return _this.types = response.data['types'];
         });
     }
 });
@@ -20140,7 +20164,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "search-advanced columns"
+    staticClass: "search-advanced columns has-text-left"
   }, [_c('b-field', {
     staticClass: "column",
     attrs: {
@@ -20148,13 +20172,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('multiselect', {
     attrs: {
-      "options": _vm.options,
+      "options": _vm.statuses,
       "multiple": true,
       "close-on-select": false,
       "clear-on-select": false,
       "hide-selected": true,
       "preserve-search": true,
-      "placeholder": "Status",
+      "placeholder": "Property Status",
       "label": "name",
       "track-by": "id"
     },
@@ -20174,11 +20198,50 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }]),
     model: {
-      value: (_vm.value),
+      value: (_vm.status),
       callback: function($$v) {
-        _vm.value = $$v
+        _vm.status = $$v
       },
-      expression: "value"
+      expression: "status"
+    }
+  })], 1), _c('b-field', {
+    staticClass: "column",
+    attrs: {
+      "label": "Property Type"
+    }
+  }, [_c('multiselect', {
+    attrs: {
+      "options": _vm.types,
+      "multiple": true,
+      "close-on-select": false,
+      "clear-on-select": false,
+      "hide-selected": true,
+      "preserve-search": true,
+      "placeholder": "Property Type",
+      "label": "name",
+      "track-by": "id"
+    },
+    scopedSlots: _vm._u([{
+      key: "tag",
+      fn: function(props) {
+        return [_c('span', {
+          staticClass: "tag is-success"
+        }, [_c('span', [_vm._v(_vm._s(props.option.name))]), _c('button', {
+          staticClass: "delete is-small",
+          on: {
+            "click": function($event) {
+              props.remove(props.option)
+            }
+          }
+        })])]
+      }
+    }]),
+    model: {
+      value: (_vm.type),
+      callback: function($$v) {
+        _vm.type = $$v
+      },
+      expression: "type"
     }
   })], 1)], 1)
 },staticRenderFns: []}
