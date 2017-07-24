@@ -56,6 +56,11 @@ class Property extends Model implements HasMediaConversions
         return $this->belongsTo(Status::class);
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
     /**
      * Set the polymorphic relation.
      *

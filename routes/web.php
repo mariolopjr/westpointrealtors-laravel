@@ -33,6 +33,7 @@ Route::get('/properties', 'PropertyController@index');
 Route::post('/properties', 'PropertyController@store');
 Route::get('/properties/create', 'PropertyController@create');
 Route::get('/properties/status', 'PropertyController@status');
+Route::get('/properties/type', 'PropertyController@type');
 Route::get('/properties/{property}', 'PropertyController@show');
 
 // Agents
