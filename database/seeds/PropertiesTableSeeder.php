@@ -16,11 +16,10 @@ class PropertiesTableSeeder extends Seeder
     {
         Property::truncate();
         factory(Property::class, 1000)->create()->each(function($property) {
-            $faker = Faker::create();
-            $path = 'public/storage/images' . $faker->image($dir = public_path('storage/images'), $width = 640, $height = 480, 'city', false);
-            $property
-                ->addMedia($path)
-                ->toMediaCollection();
+            //Storage::fake('media');
+            //$property
+            //    ->addMedia(UploadedFile::fake()->image('test1.jpg'))
+            //    ->toMediaCollection();
         });
     }
 }

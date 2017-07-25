@@ -1848,6 +1848,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -20164,9 +20183,31 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "search-advanced columns has-text-left"
+    staticClass: "search-advanced has-text-left"
+  }, [_c('div', {
+    staticClass: "columns"
   }, [_c('b-field', {
-    staticClass: "column",
+    staticClass: "column is-half is-offset-one-quarter main-search"
+  }, [_c('b-input', {
+    attrs: {
+      "placeholder": "Enter an address, city, zip code, or feature",
+      "type": "search",
+      "icon-pack": "fa",
+      "icon": "search"
+    }
+  }), _c('p', {
+    staticClass: "control"
+  }, [_c('button', {
+    staticClass: "button"
+  }, [_c('b-icon', {
+    attrs: {
+      "icon-pack": "fa",
+      "icon": "sliders"
+    }
+  })], 1)])], 1)], 1), _c('div', {
+    staticClass: "columns"
+  }, [_c('b-field', {
+    staticClass: "column is-one-quarter is-offset-one-quarter",
     attrs: {
       "label": "Property Status"
     }
@@ -20205,7 +20246,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "status"
     }
   })], 1), _c('b-field', {
-    staticClass: "column",
+    staticClass: "column is-one-quarter",
     attrs: {
       "label": "Property Type"
     }
@@ -20243,7 +20284,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "type"
     }
-  })], 1)], 1)
+  })], 1)], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

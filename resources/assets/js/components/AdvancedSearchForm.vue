@@ -1,6 +1,22 @@
 <template lang="pug">
-    div(class='search-advanced columns has-text-left')
-        b-field(label='Property Status' class='column')
+div(class='search-advanced has-text-left')
+    div(class='columns')
+        b-field(class='column is-half is-offset-one-quarter main-search')
+            b-input(
+                placeholder='Enter an address, city, zip code, or feature'
+                type='search'
+                icon-pack='fa'
+                icon='search'
+            )
+            p.control: button.button: b-icon(
+                icon-pack='fa'
+                icon='sliders'
+            )
+    div(class='columns')
+        b-field(
+            label='Property Status'
+            class='column is-one-quarter is-offset-one-quarter'
+        )
             multiselect(
                 v-model='status'
                 :options='statuses'
@@ -19,7 +35,10 @@
                         button.delete.is-small(
                             @click="props.remove(props.option)"
                         )
-        b-field(label='Property Type' class='column')
+        b-field(
+            label='Property Type'
+            class='column is-one-quarter'
+        )
             multiselect(
                 v-model='type'
                 :options='types'

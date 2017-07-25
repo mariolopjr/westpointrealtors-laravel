@@ -6,19 +6,7 @@
             <div class="container has-text-centered">
                 <form>
                     {{ csrf_field() }}
-                    <div class="column is-half is-offset-one-quarter index-search">
-                        <div class="field has-addons add-shadow">
-                            <p class="control">
-                                <input class="input" type="text" placeholder="Enter an address, ZIP Code, House Feature">
-                            </p>
-                            <p class="control">
-                                <a class="button is-info">
-                                    <i class="fa fa-search" aria-hidden="true"></i> Find
-                                </a>
-                            </p>
-                        </div>
-                        <advanced-search-form></advanced-search-form>
-                    </div>
+                    <advanced-search-form></advanced-search-form>
                 </form>
 
                 <h2 class="title index-subtitle">
