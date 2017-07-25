@@ -143,15 +143,22 @@ a.nav-item.is-tab {
   }
 }
 
-.search-advanced label {
-  color: #8a8a8a;
-  font-size: 11px;
-  font-weight: 400;
-  margin-left: 5px;
-}
+.search-advanced {
 
-.search-advanced .main-search div {
-  width: 100%;
+  label {
+    color: #8a8a8a;
+    font-size: 11px;
+    font-weight: 400;
+    margin-left: 5px;
+  }
+
+  .main-search div {
+    width: 100%;
+  }
+
+  .multiselect--active {
+    z-index: 10;
+  }
 }
 
 .home-card .card > small {
