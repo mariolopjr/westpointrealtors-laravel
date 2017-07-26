@@ -159,6 +159,20 @@ a.nav-item.is-tab {
   .multiselect--active {
     z-index: 10;
   }
+
+  .range-slider {
+    margin-top: -3rem;
+
+    .column {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
 }
 
 .home-card .card > small {

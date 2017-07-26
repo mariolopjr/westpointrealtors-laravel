@@ -58,11 +58,29 @@
                             @click="props.remove(props.option)"
                         )
     .columns
-        vue-slider(
+        b-field(
+            label='Price Range'
             class='column is-one-quarter is-offset-one-quarter'
-            v-model='priceSlider.value'
-            v-bind='priceSlider'
         )
+            vue-slider(
+                v-model='priceSlider.value'
+                v-bind='priceSlider'
+            )
+        b-field(
+            label='Property Size (in sq. ft.)'
+            class='column is-one-quarter'
+        )
+            vue-slider(
+                v-model='areaSlider.value'
+                v-bind='areaSlider'
+            )
+    .columns.range-slider
+        b-field.column.is-one-quarter.is-offset-one-quarter
+            span ${{ priceSlider.value[0] }}
+            span ${{ priceSlider.value[1] }}
+        b-field.column.is-one-quarter
+            span {{ areaSlider.value[0] }}sf
+            span {{ areaSlider.value[1] }}sf
 </template>
 <script>
 import Multiselect from 'vue-multiselect'
@@ -92,7 +110,18 @@ export default {
                 processStyle: {
                     backgroundColor: '#999',
                 },
-                width: '25%',
+            },
+            areaSlider: {
+                value: [
+                    500,
+                    2000,
+                ],
+                tooltip: 'never',
+                min: 100,
+                max: 10000,
+                processStyle: {
+                    backgroundColor: '#999',
+                },
             },
         }
     },

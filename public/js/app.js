@@ -1875,6 +1875,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1899,8 +1917,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 max: 500000,
                 processStyle: {
                     backgroundColor: '#999'
-                },
-                width: '25%'
+                }
+            },
+            areaSlider: {
+                value: [500, 2000],
+                tooltip: 'never',
+                min: 100,
+                max: 10000,
+                processStyle: {
+                    backgroundColor: '#999'
+                }
             }
         };
     },
@@ -20306,8 +20332,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)], 1), _c('div', {
     staticClass: "columns"
-  }, [_c('vue-slider', _vm._b({
+  }, [_c('b-field', {
     staticClass: "column is-one-quarter is-offset-one-quarter",
+    attrs: {
+      "label": "Price Range"
+    }
+  }, [_c('vue-slider', _vm._b({
     model: {
       value: (_vm.priceSlider.value),
       callback: function($$v) {
@@ -20315,7 +20345,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "priceSlider.value"
     }
-  }, 'vue-slider', _vm.priceSlider))], 1)])
+  }, 'vue-slider', _vm.priceSlider))], 1), _c('b-field', {
+    staticClass: "column is-one-quarter",
+    attrs: {
+      "label": "Property Size (in sq. ft.)"
+    }
+  }, [_c('vue-slider', _vm._b({
+    model: {
+      value: (_vm.areaSlider.value),
+      callback: function($$v) {
+        _vm.areaSlider.value = $$v
+      },
+      expression: "areaSlider.value"
+    }
+  }, 'vue-slider', _vm.areaSlider))], 1)], 1), _c('div', {
+    staticClass: "columns range-slider"
+  }, [_c('b-field', {
+    staticClass: "column is-one-quarter is-offset-one-quarter"
+  }, [_c('span', [_vm._v("$" + _vm._s(_vm.priceSlider.value[0]))]), _c('span', [_vm._v("$" + _vm._s(_vm.priceSlider.value[1]))])]), _c('b-field', {
+    staticClass: "column is-one-quarter"
+  }, [_c('span', [_vm._v(_vm._s(_vm.areaSlider.value[0]) + "sf")]), _c('span', [_vm._v(_vm._s(_vm.areaSlider.value[1]) + "sf")])])], 1)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
