@@ -1,6 +1,5 @@
 <template lang="pug">
-.column.home-card.is-one-quarter
-    a
+.column.home-card.is-one-quarter: a
         .card.card-equal-height
             .card-image
                 figure.image.is-3by2
@@ -8,18 +7,14 @@
                         src='http://via.placeholder.com/230x150'
                         alt='Image'
                     )
-            small.has-text-right
-                {{ options.status.name}}
+            small.has-text-right {{ options.status.name}}
             .card-content
                 .media
                     .media-content
-                        p.title.is-6
-                            {{ options.title}}
-                        p.subtitle.is-8
-                            {{ options.address }}
+                        p.title.is-6 {{ options.title}}
+                        p.subtitle.is-8 {{ options.address }}
                 .content.has-text-centered
-                    span.card-price
-                        {{ options.price }}
+                    span.card-price {{ options.price }}
                     br
             footer.card-footer
                 .card-footer-item
@@ -27,22 +22,19 @@
                         class='fa fa-bed'
                         aria-hidden='true'
                     )
-                        span.house-footer
-                            {{ options.bedrooms }}
+                        span.house-footer {{ options.bedrooms }}
                 .card-footer-item
                     i(
                         class='fa fa-shower'
                         aria-hidden='true'
                     )
-                        span.house-footer
-                            {{ options.bathrooms }}
+                        span.house-footer {{ options.bathrooms }}
                 .card-footer-item
                     i(
                         class='fa fa-car'
                         aria-hidden='true'
                     )
-                        span.house-footer
-                            {{ options.garages }}
+                        span.house-footer {{ options.garages }}
                 .card-footer-item.favorite-icon
                     i(
                         class='fa fa-heart-o'
