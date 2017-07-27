@@ -8,11 +8,15 @@
                 icon-pack='fa'
                 icon='search'
             )
-            p.control: button.button: b-icon(
-                icon-pack='fa'
-                icon='sliders'
+            p.control: button.button(
+                type='button'
+                @click='advancedSearchShown = !advancedSearchShown'
             )
-    .columns
+                b-icon(
+                    icon-pack='fa'
+                    icon='sliders'
+                )
+    .columns(v-if='advancedSearchShown')
         b-field(
             label='Property Status'
             class='column is-one-quarter is-offset-one-quarter'
@@ -29,11 +33,12 @@
                 label='name'
                 track-by='id'
             )
-                template(slot="tag", scope="props")
+                template(slot='tag', scope='props')
                     span.tag.is-success
                         span {{ props.option.name  }}
                         button.delete.is-small(
-                            @click="props.remove(props.option)"
+                            type='button'
+                            @click='props.remove(props.option)'
                         )
         b-field(
             label='Property Type'
@@ -51,13 +56,14 @@
                 label='name'
                 track-by='id'
             )
-                template(slot="tag", scope="props")
+                template(slot='tag', scope='props')
                     span.tag.is-success
                         span {{ props.option.name  }}
                         button.delete.is-small(
-                            @click="props.remove(props.option)"
+                            type='button'
+                            @click='props.remove(props.option)'
                         )
-    .columns
+    .columns(v-if='advancedSearchShown')
         b-field(
             label='Price Range'
             class='column is-one-quarter is-offset-one-quarter'
@@ -74,7 +80,7 @@
                 v-model='areaSlider.value'
                 v-bind='areaSlider'
             )
-    .columns.range-slider
+    .columns.range-slider(v-if='advancedSearchShown')
         b-field.column.is-one-quarter.is-offset-one-quarter
             span ${{ priceSlider.value[0] }}
             span ${{ priceSlider.value[1] }}
@@ -95,6 +101,7 @@ export default {
 
     data() {
         return {
+            advancedSearchShown: false,
             status: null,
             statuses: [],
             type: null,
