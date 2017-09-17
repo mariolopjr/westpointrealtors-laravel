@@ -1,5 +1,5 @@
 <div class="column home-card is-one-quarter">
-    <a href="">
+    <a href="{{ url('/properties/' . $property->slug) }}">
         <div class="card card-equal-height">
             <div class="card-image">
                 <figure class="image is-3by2">

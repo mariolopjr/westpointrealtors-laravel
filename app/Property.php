@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
+use Spatie\MediaLibrary\Media;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
@@ -14,6 +16,7 @@ class Property extends Model implements HasMediaConversions
 {
 
     use HasMediaTrait;
+    use Sluggable;
 
     protected $guarded = ['user_id'];
 
@@ -165,17 +168,26 @@ class Property extends Model implements HasMediaConversions
         // TODO: Implement loadMedia() method.
     }
 
-    /**
-     * Register the conversions that should be performed.
-     *
-     * @return array
-     */
-    public function registerMediaConversions()
+    public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('thumb')
             ->width(150)
             ->height(230)
             ->sharpen(10)
             ->optimize();
+    }
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'address'
+            ]
+        ];
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

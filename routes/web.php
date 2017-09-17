@@ -29,12 +29,20 @@ Route::get('/', function () {
 });
 
 // Properties
-Route::get('/properties', 'PropertyController@index');
-Route::post('/properties', 'PropertyController@store');
-Route::get('/properties/create', 'PropertyController@create');
-Route::get('/properties/status', 'PropertyController@status');
-Route::get('/properties/type', 'PropertyController@type');
-Route::get('/properties/{property}', 'PropertyController@show');
+Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
+    Route::get('/', 'PropertyController@index')
+        ->name('index');
+    Route::post('/', 'PropertyController@store')
+        ->name('store');
+    Route::get('/{property}', 'PropertyController@show')
+        ->name('show');
+    Route::get('/create', 'PropertyController@create')
+        ->name('create');
+    Route::get('/status', 'PropertyController@status')
+        ->name('status');
+    Route::get('/type', 'PropertyController@type')
+        ->name('type');
+});
 
 // Agents
 Route::get('/agents', 'AgentController@index');
