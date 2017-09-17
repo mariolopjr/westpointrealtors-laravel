@@ -1,9 +1,10 @@
+<?php $property->getMedia('images') ?>
 <div class="column home-card is-one-quarter">
     <a href="{{ url('/properties/' . $property->slug) }}">
         <div class="card card-equal-height">
             <div class="card-image">
                 <figure class="image is-3by2">
-                    <img src="http://via.placeholder.com/230x150" alt="Image">
+                    <img src="" alt="Image">
                 </figure>
             </div>
             <small class="has-text-right">{{ $property->status->name }}</small>
