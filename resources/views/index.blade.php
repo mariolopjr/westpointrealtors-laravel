@@ -4,10 +4,9 @@
     <section class="hero is-small">
         <div class="hero-body index-hero">
             <div class="container has-text-centered">
-                <form>
-                    {{ csrf_field() }}
+                {{-- <form action="{{ url('/properties') }}" method="get">
                     <advanced-search-form></advanced-search-form>
-                </form>
+                </form> --}}
 
                 <h2 class="title index-subtitle">
                     Our favorite properties

@@ -1,4 +1,3 @@
-<?php $property->getMedia('images') ?>
 <div class="column home-card is-one-quarter">
     <a href="{{ url('/properties/' . $property->slug) }}">
         <div class="card card-equal-height">

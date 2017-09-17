@@ -2,6 +2,10 @@
 @import "variables";
 @import "mixins";
 
+html, body {
+  font-family: $font-family-sans-serif;
+}
+
 body {
   background-color: $body-bg;
 }
@@ -152,6 +156,7 @@ a.nav-item.is-tab {
     margin-left: 5px;
   }
 
+  .main-search,
   .main-search div {
     width: 100%;
   }
@@ -306,5 +311,13 @@ a.nav-item.is-tab {
       background-color: $pagination-fill;
       color: #fff;
     }
+  }
+}
+
+.house {
+  padding: 5rem 0;
+
+  .house-titles {
+    margin-bottom: 3rem;
   }
 }

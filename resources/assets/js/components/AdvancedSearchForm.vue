@@ -1,92 +1,100 @@
 <template lang="pug">
 .search-advanced.has-text-left
-    .columns
-        b-field(class='column is-half is-offset-one-quarter main-search')
-            b-input(
-                placeholder='Enter an address, city, zip code, or feature'
-                type='search'
-                icon-pack='fa'
-                icon='search'
-            )
-            p.control: button.button(
-                type='button'
-                @click='advancedSearchShown = !advancedSearchShown'
-            )
-                b-icon(
-                    icon-pack='fa'
-                    icon='sliders'
-                )
-    .columns(v-if='advancedSearchShown')
-        b-field(
-            label='Property Status'
-            class='column is-one-quarter is-offset-one-quarter'
+  .columns
+    b-tooltip(
+      label='click to open advanced options'
+      type='is-dark'
+      position='is-right'
+      class='column is-half is-offset-one-quarter'
+      animated
+    )
+      b-field(class='main-search')
+        b-input(
+          placeholder='Enter an address, city, zip code, or feature'
+          type='search'
+          icon-pack='fa'
+          icon='search'
+          name='general'
         )
-            multiselect(
-                v-model='status'
-                :options='statuses'
-                :multiple='true'
-                :close-on-select='false'
-                :clear-on-select='false'
-                :hide-selected='true'
-                :preserve-search='true'
-                placeholder='Property Status'
-                label='name'
-                track-by='id'
-            )
-                template(slot='tag', scope='props')
-                    span.tag.is-success
-                        span {{ props.option.name  }}
-                        button.delete.is-small(
-                            type='button'
-                            @click='props.remove(props.option)'
-                        )
-        b-field(
-            label='Property Type'
-            class='column is-one-quarter'
+        p.control: button.button(
+          type='button'
+          @click='advancedSearchShown = !advancedSearchShown'
         )
-            multiselect(
-                v-model='type'
-                :options='types'
-                :multiple='true'
-                :close-on-select='false'
-                :clear-on-select='false'
-                :hide-selected='true'
-                :preserve-search='true'
-                placeholder='Property Type'
-                label='name'
-                track-by='id'
+          b-icon(
+            icon-pack='fa'
+            icon='sliders'
+          )
+  .columns(v-if='advancedSearchShown')
+    b-field(
+      label='Property Status'
+      class='column is-one-quarter is-offset-one-quarter'
+    )
+      multiselect(
+        v-model='status'
+        :options='statuses'
+        :multiple='true'
+        :close-on-select='false'
+        :clear-on-select='false'
+        :hide-selected='true'
+        :preserve-search='true'
+        placeholder='Property Status'
+        label='name'
+        track-by='id'
+      )
+        template(slot='tag', scope='props')
+          span.tag.is-success
+            span {{ props.option.name  }}
+            button.delete.is-small(
+              type='button'
+              @click='props.remove(props.option)'
             )
-                template(slot='tag', scope='props')
-                    span.tag.is-success
-                        span {{ props.option.name  }}
-                        button.delete.is-small(
-                            type='button'
-                            @click='props.remove(props.option)'
-                        )
-    .columns(v-if='advancedSearchShown')
-        b-field(
-            label='Price Range'
-            class='column is-one-quarter is-offset-one-quarter'
-        )
-            vue-slider(
-                v-model='priceSlider.value'
-                v-bind='priceSlider'
+    b-field(
+      label='Property Type'
+      class='column is-one-quarter'
+    )
+      multiselect(
+        v-model='type'
+        :options='types'
+        :multiple='true'
+        :close-on-select='false'
+        :clear-on-select='false'
+        :hide-selected='true'
+        :preserve-search='true'
+        placeholder='Property Type'
+        label='name'
+        track-by='id'
+      )
+        template(slot='tag', scope='props')
+          span.tag.is-success
+            span {{ props.option.name  }}
+            button.delete.is-small(
+              type='button'
+              @click='props.remove(props.option)'
             )
-        b-field(
-            label='Property Size (in sq. ft.)'
-            class='column is-one-quarter'
-        )
-            vue-slider(
-                v-model='areaSlider.value'
-                v-bind='areaSlider'
-            )
-    .columns.range-slider(v-if='advancedSearchShown')
-        b-field.column.is-one-quarter.is-offset-one-quarter
-            span ${{ priceSlider.value[0] }}
-            span ${{ priceSlider.value[1] }}
-        b-field.column.is-one-quarter
-            span {{ areaSlider.value[0] }}sf
-            span {{ areaSlider.value[1] }}sf
+  .columns(v-if='advancedSearchShown')
+    b-field(
+      label='Price Range'
+      class='column is-one-quarter is-offset-one-quarter'
+    )
+      vue-slider(
+        v-model='priceSlider.value'
+        v-bind='priceSlider'
+      )
+    b-field(
+      label='Property Size (in sq. ft.)'
+      class='column is-one-quarter'
+    )
+      vue-slider(
+        v-model='areaSlider.value'
+        v-bind='areaSlider'
+      )
+  .columns.range-slider(v-if='advancedSearchShown')
+    b-field.column.is-one-quarter.is-offset-one-quarter
+      span ${{ priceSlider.value[0] }}
+      span ${{ priceSlider.value[1] }}
+    b-field.column.is-one-quarter
+      span {{ areaSlider.value[0] }}sf
+      span {{ areaSlider.value[1] }}sf
 </template>
 <script>
 import Multiselect from 'vue-multiselect'

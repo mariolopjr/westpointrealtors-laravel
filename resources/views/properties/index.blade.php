@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <nav class="navbar has-shadow property-nav">
+    {{-- <nav class="navbar has-shadow property-nav">
         <div class="container">
             <div class="navbar-menu">
                 <div class="navbar-start">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-    </nav>
+    </nav> --}}
     <div class="container property-list">
         @foreach($properties as $property)
             @if(($loop->iteration - 1) % 4 == 0 || $loop->first)

@@ -2151,6 +2151,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -20240,14 +20248,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "search-advanced has-text-left"
   }, [_c('div', {
     staticClass: "columns"
+  }, [_c('b-tooltip', {
+    staticClass: "column is-half is-offset-one-quarter",
+    attrs: {
+      "label": "click to open advanced options",
+      "type": "is-dark",
+      "position": "is-right",
+      "animated": "animated"
+    }
   }, [_c('b-field', {
-    staticClass: "column is-half is-offset-one-quarter main-search"
+    staticClass: "main-search"
   }, [_c('b-input', {
     attrs: {
       "placeholder": "Enter an address, city, zip code, or feature",
       "type": "search",
       "icon-pack": "fa",
-      "icon": "search"
+      "icon": "search",
+      "name": "general"
     }
   }), _c('p', {
     staticClass: "control"
@@ -20266,7 +20283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "icon-pack": "fa",
       "icon": "sliders"
     }
-  })], 1)])], 1)], 1), (_vm.advancedSearchShown) ? _c('div', {
+  })], 1)])], 1)], 1)], 1), (_vm.advancedSearchShown) ? _c('div', {
     staticClass: "columns"
   }, [_c('b-field', {
     staticClass: "column is-one-quarter is-offset-one-quarter",
