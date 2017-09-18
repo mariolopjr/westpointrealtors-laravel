@@ -67,8 +67,14 @@ class Property extends Model implements HasMediaConversions
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('thumb')
-            ->width(150)
-            ->height(230)
+            ->width(540)
+            ->height(360)
+            ->sharpen(10)
+            ->optimize();
+
+        $this->addMediaConversion('slideshow')
+            ->width(1920)
+            ->height(1080)
             ->sharpen(10)
             ->optimize();
     }

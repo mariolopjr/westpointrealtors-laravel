@@ -3,7 +3,7 @@
         <div class="card card-equal-height">
             <div class="card-image">
                 <figure class="image is-3by2">
-                    <img src="{{ url($property->getMedia('images')->first()->getUrl()) }}" alt="Image">
+                    <img src="{{ url($property->getFirstMediaUrl('images', 'thumb')) }}" alt="House image">
                 </figure>
             </div>
             <small class="has-text-right">{{ $property->status->name }}</small>

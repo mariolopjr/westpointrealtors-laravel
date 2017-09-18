@@ -9,21 +9,15 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import NProgress from 'vue-nprogress';
 import Buefy from 'buefy';
-import 'buefy/lib/buefy.css'
+import 'buefy/lib/buefy.css';
+import VueImg from 'v-img';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-Vue.component(
-    'nprogress',
-    require('./components/NProgress.vue'
-));
-
 Vue.use(Buefy, {
     defaultIconPack: 'fa'
 });
@@ -33,20 +27,16 @@ Vue.component(
     require('./components/AdvancedSearchForm.vue'
 ));
 
-Vue.use(NProgress);
-
-const nprogress = new NProgress({ parent: '.nprogress-container'  });
+Vue.use(VueImg, { altAsTitle: true });
 
 const app = new Vue({
     el: '#app',
-    nprogress,
 
     mounted() {
-        this.$nprogress.done();
+        //
     },
 
     created() {
-        this.$nprogress.start();
         //
     }
 });

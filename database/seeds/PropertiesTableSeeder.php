@@ -29,7 +29,7 @@ class PropertiesTableSeeder extends Seeder
             $index = $faker->numberBetween(1, 6);
 
             for ($i = 0; $i < $index; $i++) {
-                $image = $faker->image('public/uploads', 640, 480, 'city', false);
+                $image = $faker->image('public/uploads', 1920, 1920, 'city', false);
                 $file = new UploadedFile(base_path('public/uploads/') . $image, $image);
                 $property
                     ->addMedia($file)
