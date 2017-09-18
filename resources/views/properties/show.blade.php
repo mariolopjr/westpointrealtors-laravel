@@ -16,6 +16,11 @@
                                 <img v-img:gallery src="{{ url($image->getUrl('slideshow')) }}" alt="Photo {{ $loop->iteration }}" class="@if($loop->iteration != 1) hidden @endif">
                             @endforeach
                         </figure>
+                        <div class="selection-buttons has-text-centered">
+                            <div class="image-button circle">
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-content">
                         <div class="price">
