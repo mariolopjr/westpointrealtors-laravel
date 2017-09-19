@@ -24,6 +24,11 @@
         <div class="container has-text-centered">
             <div class="hero-body">
                 <h2 class="title">Our affiliates</h2>
+                <div class="columns affiliates">
+                    <div class="column">
+                        <img src="{{ url('/images/sageLogo.png') }}">
+                    </div>
+                </div>
             </div>
         </div>
     </section>

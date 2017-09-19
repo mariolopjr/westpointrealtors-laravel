@@ -4,7 +4,7 @@
     <div class="container house">
         <div class="house-titles has-text-centered">
             <h1 class="title">{{ $property->title }}</h1>
-            <h2 class="subtitle">{{ $property->address }}</h1>
+            <h2 class="subtitle">{{ $property->address }}</h2>
         </div>
 
         <div class="columns">

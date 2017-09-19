@@ -495,3 +495,8 @@ a.nav-item.is-tab.is-active {
   cursor: pointer;
 }
 
+.affiliates img {
+  border-radius: 7px;
+  width: 200px;
+}
+
