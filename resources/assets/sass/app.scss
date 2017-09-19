@@ -326,7 +326,20 @@ a.nav-item.is-tab {
     font-weight: 200;
   }
 
-  .card-content hr:not(:first-of-type) {
+  .card-header .price {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .card-content {
+    font-size: 0.8rem;
+
+    .item-title {
+      font-weight: 600;
+    }
+  }
+
+  .card-content hr {
     margin-top: -0.1rem;
   }
 }
@@ -425,6 +438,7 @@ $outside-circle-margin: ($outside-circle-size / 2) * -1;
     text-align: center;
     background: transparent;
     color: #000;
+    resize: none;
 
     &:active,
     &:focus {
@@ -433,18 +447,46 @@ $outside-circle-margin: ($outside-circle-size / 2) * -1;
   }
 
   .card-footer {
-    background-color: #00b89c;
+    background-color: darken(#00d1b2, 3%);
     border-top: 0;
 
     &:active,
     &:focus,
     &:hover {
-      background-color: #00a38b;
+      background-color: darken(#00d1b2, 5%);
       cursor: pointer;
     }
   }
 }
+
 .affiliates img {
   border-radius: 7px;
   width: 200px;
+}
+
+footer.site {
+  background-color: #00d1b2;
+
+  > .container {
+    padding: 5rem 0 2rem 0;
+  }
+
+  .disclaimer {
+    hr {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    span:not(:first-of-type) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.lower-footer {
+  background-color: darken(#00d1b2, 3%);
+
+  .container {
+    padding: 1rem 0;
+  }
 }

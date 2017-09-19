@@ -374,7 +374,20 @@ a.nav-item.is-tab.is-active {
   font-weight: 200;
 }
 
-.house .card-content hr:not(:first-of-type) {
+.house .card-header .price {
+  width: 100%;
+  padding: 1rem;
+}
+
+.house .card-content {
+  font-size: 0.8rem;
+}
+
+.house .card-content .item-title {
+  font-weight: 600;
+}
+
+.house .card-content hr {
   margin-top: -0.1rem;
 }
 
@@ -474,6 +487,7 @@ a.nav-item.is-tab.is-active {
   text-align: center;
   background: transparent;
   color: #000;
+  resize: none;
 }
 
 .card.contact-us-card input:active,
@@ -484,19 +498,44 @@ a.nav-item.is-tab.is-active {
 }
 
 .card.contact-us-card .card-footer {
-  background-color: #00b89c;
+  background-color: #00c2a5;
   border-top: 0;
 }
 
 .card.contact-us-card .card-footer:active,
 .card.contact-us-card .card-footer:focus,
 .card.contact-us-card .card-footer:hover {
-  background-color: #00a38b;
+  background-color: #00b89c;
   cursor: pointer;
 }
 
 .affiliates img {
   border-radius: 7px;
   width: 200px;
+}
+
+footer.site {
+  background-color: #00d1b2;
+}
+
+footer.site > .container {
+  padding: 5rem 0 2rem 0;
+}
+
+footer.site .disclaimer hr {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+footer.site .disclaimer span:not(:first-of-type) {
+  font-size: 0.9rem;
+}
+
+.lower-footer {
+  background-color: #00c2a5;
+}
+
+.lower-footer .container {
+  padding: 1rem 0;
 }
 

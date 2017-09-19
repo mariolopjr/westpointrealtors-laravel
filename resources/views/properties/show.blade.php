@@ -25,14 +25,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-content">
+                    <header class="card-header">
                         <div class="price">
                             <span class="card-price">
                                 ${{ number_format($property->price, 2) }}
                             </span>
                             <span class="is-pulled-right is-uppercase house-status">{{ $property->status->name }}</span>
                         </div>
-                        <hr>
+                    </header>
+                    <div class="card-content">
                         <div class="columns">
                             <div class="column">
                                 <span class="item-title">Property Type</span>
@@ -44,7 +45,7 @@
                                 <span class="item-title">Year</span>
                             </div>
                             <div class="column">
-                                <span class="item-data">{{ $property->year }}</span>
+                                <span class="item-data">{{ date('Y', strtotime($property->year)) }}</span>
                             </div>
                         </div>
                         <hr>
@@ -53,13 +54,13 @@
                                 <span class="item-title">Home Size</span>
                             </div>
                             <div class="column">
-                                <span class="item-data">{{ $property->home_size }}</span>
+                                <span class="item-data">{{ number_format($property->home_size, 2, '.', ',') }}</span>
                             </div>
                             <div class="column">
                                 <span class="item-title">Lot Size</span>
                             </div>
                             <div class="column">
-                                <span class="item-data">{{ $property->lot_size }}</span>
+                                <span class="item-data">{{ number_format($property->lot_size, 2, '.', ',') }}</span>
                             </div>
                         </div>
                         <hr>
@@ -89,7 +90,7 @@
                                 <span class="item-title">HOA Fees</span>
                             </div>
                             <div class="column">
-                                <span class="item-data">${{ $property->hoa_fees }}</span>
+                                <span class="item-data">${{ number_format($property->hoa_fees, 2, '.', ',') }}</span>
                             </div>
                         </div>
                     </div>
