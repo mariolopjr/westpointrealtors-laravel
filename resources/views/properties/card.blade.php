@@ -6,7 +6,7 @@
                     <img src="{{ url($property->getFirstMediaUrl('images', 'thumb')) }}" alt="House image">
                 </figure>
             </div>
-            <small class="has-text-right">{{ $property->status->name }}</small>
+            <small class="has-text-right is-uppercase">{{ $property->status->name }}</small>
             <div class="card-content">
                 <div class="media">
                     <div class="media-content">

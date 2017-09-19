@@ -325,12 +325,20 @@ a.nav-item.is-tab {
     font-size: 1.3rem;
     font-weight: 200;
   }
+
+  .card-content hr:not(:first-of-type) {
+    margin-top: -0.1rem;
+  }
 }
 
 .selection-buttons {
   margin-top: -5rem;
   position: absolute;
   width: 100%;
+
+  .not-active {
+    opacity: 0.6;
+  }
 }
 
 $circle-size: 40px;
@@ -406,5 +414,33 @@ $outside-circle-margin: ($outside-circle-size / 2) * -1;
 
   .contact-us-light {
     font-weight: 200;
+  }
+
+  input,
+  textarea {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid #000;
+    text-align: center;
+    background: transparent;
+    color: #000;
+
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .card-footer {
+    background-color: #00b89c;
+    border-top: 0;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: #00a38b;
+      cursor: pointer;
+    }
   }
 }

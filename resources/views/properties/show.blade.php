@@ -20,7 +20,7 @@
                             <div class="image-button circle">
                                 <i class="fa fa-picture-o" aria-hidden="true"></i>
                             </div>
-                            <div class="image-button circle">
+                            <div class="image-button circle not-active">
                                 <i class="fa fa-map-o" aria-hidden="true"></i>
                             </div>
                         </div>
@@ -36,10 +36,14 @@
                         <div class="columns">
                             <div class="column">
                                 <span class="item-title">Property Type</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">{{ $property->type }}</span>
                             </div>
                             <div class="column">
                                 <span class="item-title">Year</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">{{ $property->year }}</span>
                             </div>
                         </div>
@@ -47,10 +51,14 @@
                         <div class="columns">
                             <div class="column">
                                 <span class="item-title">Home Size</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">{{ $property->home_size }}</span>
                             </div>
                             <div class="column">
                                 <span class="item-title">Lot Size</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">{{ $property->lot_size }}</span>
                             </div>
                         </div>
@@ -58,10 +66,14 @@
                         <div class="columns">
                             <div class="column">
                                 <span class="item-title">Bedrooms</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">{{ $property->bedrooms }}</span>
                             </div>
                             <div class="column">
                                 <span class="item-title">Bathrooms</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">{{ $property->bathrooms }}</span>
                             </div>
                         </div>
@@ -69,10 +81,14 @@
                         <div class="columns">
                             <div class="column">
                                 <span class="item-title">Garages</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">{{ $property->garages }}</span>
                             </div>
                             <div class="column">
                                 <span class="item-title">HOA Fees</span>
+                            </div>
+                            <div class="column">
                                 <span class="item-data">${{ $property->hoa_fees }}</span>
                             </div>
                         </div>
@@ -89,17 +105,17 @@
                             About this property
                         </p>
                         <form>
-                            <b-field label="Name">
-                                <b-input></b-input>
+                            <b-field>
+                                <b-input placeholder="Your name"></b-input>
                             </b-field>
-                            <b-field label="Email">
-                                <b-input type="email"></b-input>
+                            <b-field>
+                                <b-input type="email" placeholder="Your email"></b-input>
                             </b-field>
-                            <b-field label="Contact Number">
-                                <b-input></b-input>
+                            <b-field>
+                                <b-input placeholder="Your contact Number"></b-input>
                             </b-field>
-                            <b-field label="Message">
-                                <b-input maxlength="200" type="textarea"></b-input>
+                            <b-field>
+                                <b-input maxlength="200" type="textarea" placeholder="Hi! I am interested in the property because..."></b-input>
                             </b-field>
                         </form>
                     </div>
@@ -110,6 +126,23 @@
                             </span>
                         </p>
                     </footer>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Property Details
+                        </p>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
+                            {{ $property->description }}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

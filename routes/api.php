@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Properties
+Route::group(['prefix' => 'property', 'as' => 'properties.'], function () {
+    Route::get('/status', 'PropertyController@status')
+        ->name('status');
+    Route::get('/type', 'PropertyController@type')
+        ->name('type');
+});

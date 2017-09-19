@@ -143,11 +143,11 @@ export default {
 
     mounted() {
         axios
-            .get('/properties/status')
+            .get('/api/property/status')
             .then(response => this.statuses = response.data['statuses']);
 
         axios
-            .get('/properties/type')
+            .get('/api/property/type')
             .then(response => this.types = response.data['types'])
     }
 }

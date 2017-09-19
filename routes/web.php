@@ -36,12 +36,16 @@ Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
         ->name('store');
     Route::get('/{property}', 'PropertyController@show')
         ->name('show');
-    Route::get('/create', 'PropertyController@create')
+});
+
+// Admin
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', 'AdminController@index')
+        ->name('index');
+    Route::post('/', 'AdminController@store')
+        ->name('store');
+    Route::get('/property/create', 'PropertyController@create')
         ->name('create');
-    Route::get('/status', 'PropertyController@status')
-        ->name('status');
-    Route::get('/type', 'PropertyController@type')
-        ->name('type');
 });
 
 // Agents

@@ -12,6 +12,7 @@ window.Vue = require('vue');
 import Buefy from 'buefy';
 import 'buefy/lib/buefy.css';
 import VueImg from 'v-img';
+import Dropzone from 'vue2-dropzone'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -374,10 +374,18 @@ a.nav-item.is-tab.is-active {
   font-weight: 200;
 }
 
+.house .card-content hr:not(:first-of-type) {
+  margin-top: -0.1rem;
+}
+
 .selection-buttons {
   margin-top: -5rem;
   position: absolute;
   width: 100%;
+}
+
+.selection-buttons .not-active {
+  opacity: 0.6;
 }
 
 .image-button {
@@ -454,5 +462,36 @@ a.nav-item.is-tab.is-active {
 
 .card.contact-us-card .contact-us-light {
   font-weight: 200;
+}
+
+.card.contact-us-card input,
+.card.contact-us-card textarea {
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 2px solid #000;
+  text-align: center;
+  background: transparent;
+  color: #000;
+}
+
+.card.contact-us-card input:active,
+.card.contact-us-card input:focus,
+.card.contact-us-card textarea:active,
+.card.contact-us-card textarea:focus {
+  outline: 0;
+}
+
+.card.contact-us-card .card-footer {
+  background-color: #00b89c;
+  border-top: 0;
+}
+
+.card.contact-us-card .card-footer:active,
+.card.contact-us-card .card-footer:focus,
+.card.contact-us-card .card-footer:hover {
+  background-color: #00a38b;
+  cursor: pointer;
 }
 
