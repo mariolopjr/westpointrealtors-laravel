@@ -17,5 +17,4 @@
 </head>
 <body>
 <div id="app">
-    <nprogress class="nprogress-container"></nprogress>
     <div v-cloak>

@@ -531,11 +531,27 @@ footer.site .disclaimer span:not(:first-of-type) {
   font-size: 0.9rem;
 }
 
+footer.site .disclaimer .contact-number:not(:first-of-type) {
+  margin-left: 25px;
+}
+
 .lower-footer {
   background-color: #00c2a5;
 }
 
 .lower-footer .container {
   padding: 1rem 0;
+}
+
+.lower-footer a {
+  color: #d9d9d9;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.lower-footer a:active,
+.lower-footer a:focus,
+.lower-footer a:hover {
+  color: #fff;
 }
 

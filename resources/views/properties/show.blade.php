@@ -15,6 +15,7 @@
                             @foreach($property->getMedia('images') as $image)
                                 <img v-img:gallery src="{{ url($image->getUrl('slideshow')) }}" alt="Photo {{ $loop->iteration }}" class="@if($loop->iteration != 1) hidden @endif">
                             @endforeach
+                            <google-map></google-map>
                         </figure>
                         <div class="selection-buttons has-text-centered">
                             <div class="image-button circle">
