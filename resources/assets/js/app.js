@@ -38,11 +38,18 @@ Vue.use(VueImg, { altAsTitle: true });
 const app = new Vue({
     el: '#app',
 
+    data() {
+      return {
+      }
+    },
+
     mounted() {
-        //
     },
 
     created() {
         //
+    },
+
+    methods: {
     }
 });

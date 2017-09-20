@@ -480,6 +480,21 @@ a.nav-item.is-tab.is-active {
   margin-top: -0.1rem;
 }
 
+.house figure.image.is-16by9 {
+  height: 100%;
+  width: 100%;
+}
+
+.house figure.image.is-16by9 #map {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .selection-buttons {
   margin-top: -5rem;
   position: absolute;

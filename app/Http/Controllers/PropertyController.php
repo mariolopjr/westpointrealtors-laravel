@@ -101,7 +101,7 @@ class PropertyController extends Controller
     public function show(Property $property)
     {
         JavaScript::put([
-            'address' => str_replace(array("\r", "\n"), ' ', $property->address),
+            'address' => str_replace(array("\r", "\n"), ', ', $property->address),
         ]);
 
         return view('properties.show', compact('property'));

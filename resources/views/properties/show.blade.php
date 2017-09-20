@@ -15,13 +15,13 @@
                             @foreach($property->getMedia('images') as $image)
                                 <img v-img:gallery src="{{ url($image->getUrl('slideshow')) }}" alt="Photo {{ $loop->iteration }}" class="@if($loop->iteration != 1) hidden @endif">
                             @endforeach
-                            <google-map :address='address'></google-map>
+                            <div id="map" class="hidden"></div>
                         </figure>
                         <div class="selection-buttons has-text-centered">
-                            <div class="image-button circle">
+                            <div id="picture-btn" class="image-button circle" onclick="hideMap()">
                                 <i class="fa fa-picture-o" aria-hidden="true"></i>
                             </div>
-                            <div class="image-button circle not-active">
+                            <div id="map-btn" class="image-button circle not-active" onclick="showMap()">
                                 <i class="fa fa-map-o" aria-hidden="true"></i>
                             </div>
                         </div>
