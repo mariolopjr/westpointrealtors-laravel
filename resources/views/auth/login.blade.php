@@ -72,7 +72,7 @@
                                 <b-switch>Remember me?</b-switch>
                             </div>
 
-                            <button type="submit" class="button is-primary square-corners login-btn">Login</button>
+                            <button type="submit" class="button square-corners login-btn">Login</button>
                         </form>
                     </div>
                 </div>
