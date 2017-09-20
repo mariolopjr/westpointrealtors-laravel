@@ -11,11 +11,9 @@
                         </a>
                     </div>
                     <div class="nav-right">
-                        <span class="nav-item">
-                            <a class="" href="{{ route('register') }}">
-                              No account? Create a FREE account!
-                            </a>
-                        </span>
+                        <a class="nav-item" href="{{ route('register') }}">
+                          No account? Create a FREE account!
+                        </a>
                     </div>
                 </div>
             </header>
@@ -25,19 +23,16 @@
             <div class="container has-text-centered">
                 <h1 class="title drop-in-transition-delay2">Thanks for coming back!</h1>
                 <div class="card column is-half is-offset-one-quarter add-shadow-2x drop-in-transition">
-                    <header class="card-header">
-                        <p class="card-header-title has-text-centered">
-                            Please login
-                        </p>
-                    </header>
                     <div class="card-content has-text-left">
+                        <p class="title has-text-centered">
+                            <span class="login-bold">Please</span> <span class="login-light">login</span>
+                        </p>
                         <form class="login-form" role="form" method="POST" action="{{ route('login') }}">
                             {{ csrf_field() }}
 
                             <div class="field">
-                                <label class="label" for="email">Email</label>
                                 <p class="control has-icons-left{{ $errors->has('email') ? ' has-icons-right' : '' }}">
-                                    <input class="input{{ $errors->has('email') ? ' is-danger' : '' }}" type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email Address" required autofocus />
+                                    <input class="input{{ $errors->has('email') ? ' is-danger' : '' }}" type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Email" required autofocus />
 
                                     <span class="icon is-small is-left">
                                         <i class="fa fa-envelope"></i>
@@ -55,7 +50,6 @@
                             </div>
 
                             <div class="field">
-                                <label class="label" for="password">Password</label>
                                 <p class="control has-icons-left{{ $errors->has('password') ? ' has-icons-right' : '' }}">
                                     <input class="input square-corners{{ $errors->has('password') ? ' is-danger' : '' }}" type="password" name="password" id="password" placeholder="Password" required />
 
@@ -75,16 +69,8 @@
                             </div>
 
                             <div class="field">
-                                <p class="control">
-                                    <label class="checkbox">
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </p>
+                                <b-switch>Remember me?</b-switch>
                             </div>
-
-                            <a class="" href="{{ route('password.request') }}">
-                                Forgot Your Password?
-                            </a>
 
                             <button type="submit" class="button is-primary square-corners login-btn">Login</button>
                         </form>
@@ -97,8 +83,7 @@
             <nav class="tabs">
                 <div class="container">
                     <ul>
-                        <li>Copyright c West Point Real Estate</li>
-                        <li><a>Terms and Conditions</a></li>
+                        <li class="has-text-centered">© West Point Real Estate</li>
                     </ul>
                 </div>
             </nav>

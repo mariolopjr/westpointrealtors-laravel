@@ -260,7 +260,7 @@ a.nav-item.is-tab.is-active {
 /* Login */
 
 .login-hero {
-  background-color: #085e72;
+  background-color: #00d1b2;
 }
 
 .login-hero .card-header {
@@ -271,6 +271,67 @@ a.nav-item.is-tab.is-active {
 .login-hero .login-btn {
   height: 3em;
   width: 100%;
+}
+
+.login-hero a.nav-item {
+  color: #737373 !important;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.login-hero a.nav-item:active,
+.login-hero a.nav-item:focus,
+.login-hero a.nav-item:hover {
+  color: #000 !important;
+}
+
+.login-hero .hero-foot li {
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.login-hero header.nav {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.login-hero .login-bold {
+  font-weight: 400;
+}
+
+.login-hero .login-light {
+  font-weight: 200;
+}
+
+.login-hero input,
+.login-hero textarea {
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 2px solid #b5b5b5;
+  text-align: center;
+  background: transparent;
+  color: #000;
+  resize: none;
+}
+
+.login-hero input:active,
+.login-hero input:focus,
+.login-hero textarea:active,
+.login-hero textarea:focus {
+  border-bottom: 2px solid #000;
+  outline: 0;
+}
+
+.login-hero input:hover,
+.login-hero textarea:hover {
+  border-bottom: 2px solid #828282;
+}
+
+.login-hero input .field:not(:last-child),
+.login-hero textarea .field:not(:last-child) {
+  margin-bottom: 1.25rem;
 }
 
 /* Properties */

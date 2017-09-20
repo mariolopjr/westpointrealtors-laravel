@@ -218,7 +218,7 @@ a.nav-item.is-tab {
 
 /* Login */
 .login-hero {
-  background-color: $hero-login-bg;
+  background-color: #00d1b2;
 
   .card-header {
     box-shadow: 0 1px rgba(10, 10, 10, 0.1);
@@ -227,6 +227,61 @@ a.nav-item.is-tab {
   .login-btn {
     height: 3em;
     width: 100%;
+  }
+
+  a.nav-item {
+    color: lighten(#000, 45%) !important;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #000 !important;
+    }
+  }
+
+  .hero-foot li {
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  header.nav {
+    box-shadow: none;
+  }
+
+  .login-bold {
+    font-weight: 400;
+  }
+
+  .login-light {
+    font-weight: 200;
+  }
+
+  input,
+  textarea {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid #b5b5b5;
+    text-align: center;
+    background: transparent;
+    color: #000;
+    resize: none;
+
+    &:active,
+    &:focus {
+      border-bottom: 2px solid #000;
+      outline: 0;
+    }
+
+    &:hover {
+      border-bottom: 2px solid darken(#b5b5b5, 20%);
+    }
+
+    .field:not(:last-child) {
+      margin-bottom: 1.25rem;
+    }
   }
 }
 
