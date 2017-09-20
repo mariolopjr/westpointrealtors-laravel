@@ -250,6 +250,10 @@ a.nav-item.is-tab {
     box-shadow: none;
   }
 
+  .title {
+    font-weight: 200;
+  }
+
   .login-bold {
     font-weight: 400;
   }
@@ -278,10 +282,23 @@ a.nav-item.is-tab {
     &:hover {
       border-bottom: 2px solid darken(#b5b5b5, 20%);
     }
+  }
 
-    .field:not(:last-child) {
-      margin-bottom: 1.25rem;
-    }
+  .field:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+
+  .switch input[type=checkbox]:checked + .check {
+    background: #00d1b2;
+  }
+
+  .switch:focus input[type=checkbox]:checked + .check {
+    -webkit-box-shadow: 0 0 0.5em transparentize(#00d1b2, 0.2);
+    box-shadow: 0 0 0.5em transparentize(#00d1b2, 0.2);
+  }
+
+  .switch:hover input[type=checkbox]:checked + .check {
+    background: transparentize(#00d1b2, 0.1);
   }
 }
 

@@ -295,6 +295,10 @@ a.nav-item.is-tab.is-active {
           box-shadow: none;
 }
 
+.login-hero .title {
+  font-weight: 200;
+}
+
 .login-hero .login-bold {
   font-weight: 400;
 }
@@ -329,9 +333,21 @@ a.nav-item.is-tab.is-active {
   border-bottom: 2px solid #828282;
 }
 
-.login-hero input .field:not(:last-child),
-.login-hero textarea .field:not(:last-child) {
+.login-hero .field:not(:last-child) {
   margin-bottom: 1.25rem;
+}
+
+.login-hero .switch input[type=checkbox]:checked + .check {
+  background: #00d1b2;
+}
+
+.login-hero .switch:focus input[type=checkbox]:checked + .check {
+  -webkit-box-shadow: 0 0 0.5em rgba(0, 209, 178, 0.8);
+  box-shadow: 0 0 0.5em rgba(0, 209, 178, 0.8);
+}
+
+.login-hero .switch:hover input[type=checkbox]:checked + .check {
+  background: rgba(0, 209, 178, 0.9);
 }
 
 /* Properties */

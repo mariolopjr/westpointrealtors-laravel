@@ -10,11 +10,11 @@
                             West Point Real Estate
                         </a>
                     </div>
-                    <div class="nav-right">
+                    {{-- <div class="nav-right">
                         <a class="nav-item" href="{{ route('register') }}">
                           No account? Create a FREE account!
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </header>
         </div>
