@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Property;
 use App\Repositories\Properties;
 use Illuminate\Http\Request;
+use JavaScript;
 
 class PropertyController extends Controller
 {
@@ -99,6 +100,10 @@ class PropertyController extends Controller
      */
     public function show(Property $property)
     {
+        JavaScript::put([
+            'address' => str_replace(array("\r", "\n"), ' ', $property->address),
+        ]);
+
         return view('properties.show', compact('property'));
     }
 

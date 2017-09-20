@@ -7,3 +7,5 @@
 @include('partials.footer')
 
 @include('partials.scripts')
+
+@include('jsvars')

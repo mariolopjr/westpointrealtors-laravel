@@ -32,9 +32,9 @@
                 <div class="card-footer-item">
                     <i class="fa fa-car"></i> <span class="house-footer">{{ $property->garages }}</span>
                 </div>
-                <div class="card-footer-item favorite-icon">
+                {{-- <div class="card-footer-item favorite-icon">
                     <i class="fa fa-heart-o"></i>
-                </div>
+                </div> --}}
             </footer>
         </div>
     </a>

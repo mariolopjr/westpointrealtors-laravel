@@ -24,13 +24,13 @@ Vue.use(Buefy, {
 });
 
 Vue.component(
-    'advanced-search-form',
-    require('./components/AdvancedSearchForm.vue'
+  'advanced-search-form',
+  require('./components/AdvancedSearchForm.vue'
 ));
 
 Vue.component(
-    'google-map',
-    require('./components/GoogleMap.vue'
+  'google-map',
+  require('./components/GoogleMap.vue'
 ));
 
 Vue.use(VueImg, { altAsTitle: true });
