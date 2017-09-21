@@ -11,6 +11,7 @@
     <!-- Stylesheets -->
     {!! HTML::style(asset('https://fonts.googleapis.com/css?family=Raleway:100,300,400,600'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
     {!! HTML::style(asset('https://use.fontawesome.com/ffe4b59639.js'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
+    {!! HTML::style(asset('https://cdn.quilljs.com/1.3.2/quill.snow.css'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
     {!! HTML::style(asset('css/app.css'), array('type' => 'text/css', 'rel' => 'stylesheet')) !!}
 
     @yield('addStylesheets')
