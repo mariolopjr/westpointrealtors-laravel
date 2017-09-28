@@ -19,6 +19,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker) {
         'rental' => $faker->boolean(20),
         'favorite' => $faker->boolean(10),
         'active' => $faker->boolean(67),
+        'user_id' => $faker->numberBetween(1, 100),
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime
     ];

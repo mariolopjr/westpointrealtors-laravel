@@ -95,6 +95,10 @@ function geolocate() {
     }
 }
 
+function insertInput(responseText) {
+    document.getElementById('new-property').append('<input type="hidden" name="files[]" value="'+ responseText +'">');
+}
+
 tinymce.init({
     selector: 'textarea#editor',
     branding: false,
@@ -110,30 +114,4 @@ tinymce.init({
         '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
         '//www.tinymce.com/css/codepen.min.css'],
 });
-
-Dropzone.options.dropzone = {
-    url: '/properties',
-    autoProcessQueue: false,
-    uploadMultiple: true,
-    parallelUploads: 5,
-    maxFiles: 5,
-    maxFilesize: 1,
-    acceptedFiles: 'image/*',
-    addRemoveLinks: true,
-
-    init: function() {
-        dzClosure = this;
-
-        document.getElementById("submit-all").addEventListener("click", function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            dzClosure.processQueue();
-        });
-
-        this.on("sendingmultiple", function(data, xhr, formData) {
-            formData.append("firstname", jQuery("#firstname").val());
-            formData.append("lastname", jQuery("#lastname").val());
-        });
-    }
-}
 </script>

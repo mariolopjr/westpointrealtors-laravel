@@ -58,24 +58,24 @@ class PropertyController extends Controller
         $this->validate(request(), [
             'title' => 'required|max:250',
             'type' => 'required',
-            'address',
-            'status',
-            'price',
-            'description',
-            'home_size',
-            'lot_size',
+            'address' => 'required',
+            'status_id' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'home_size' => 'required',
+            'lot_size' => 'required',
             'bedrooms' => 'required',
-            'bathrooms',
-            'garages',
-            'year',
-            'hoa_fees'
+            'bathrooms' => 'required',
+            'garages' => 'required',
+            'year' => 'required',
+            'hoa_fees' => 'required'
         ]);
 
         $property = new Property(request([
             'title',
             'type',
             'address',
-            'status',
+            'status_id',
             'price',
             'description',
             'home_size',
@@ -83,10 +83,15 @@ class PropertyController extends Controller
             'bedrooms',
             'bathrooms',
             'garages',
-            'year',
             'hoa_fees'
         ]));
+        $property->date('Y', request('year'));
         $property->user_id = auth()->id();
+        $fileAdders = $property
+            ->addAllMediaFromRequest()
+            ->each(function ($fileAdder) {
+                $fileAdder->toMediaCollection('images', 'images');
+            });
         $property->save();
 
         return redirect('/');

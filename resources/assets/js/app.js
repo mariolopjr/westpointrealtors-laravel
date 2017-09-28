@@ -34,6 +34,7 @@ const app = new Vue({
 
     data() {
       return {
+        dropFiles: [],
       }
     },
 
@@ -45,5 +46,8 @@ const app = new Vue({
     },
 
     methods: {
+      deleteDropFile(index) {
+        this.dropFiles.splice(index, 1)
+      }
     }
 });

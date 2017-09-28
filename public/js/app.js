@@ -1242,7 +1242,7 @@ window.Vue = __webpack_require__(34);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a, {
-    defaultIconPack: 'fa'
+  defaultIconPack: 'fa'
 });
 
 Vue.component('advanced-search-form', __webpack_require__(40));
@@ -1250,18 +1250,24 @@ Vue.component('advanced-search-form', __webpack_require__(40));
 Vue.use(__WEBPACK_IMPORTED_MODULE_2_v_img__["a" /* default */], { altAsTitle: true });
 
 var app = new Vue({
-    el: '#app',
+  el: '#app',
 
-    data: function data() {
-        return {};
-    },
-    mounted: function mounted() {},
-    created: function created() {
-        //
-    },
+  data: function data() {
+    return {
+      dropFiles: []
+    };
+  },
+  mounted: function mounted() {},
+  created: function created() {
+    //
+  },
 
 
-    methods: {}
+  methods: {
+    deleteDropFile: function deleteDropFile(index) {
+      this.dropFiles.splice(index, 1);
+    }
+  }
 });
 
 /***/ }),
