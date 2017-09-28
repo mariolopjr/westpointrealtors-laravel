@@ -77,6 +77,15 @@ body {
   opacity: 1;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
 
 /* Advanced Search */
 .search-advanced {
@@ -561,6 +570,19 @@ $outside-circle-margin: ($outside-circle-size / 2) * -1;
 .affiliates img {
   border-radius: 7px;
   width: 200px;
+}
+
+.title {
+
+  padding: 2rem 0;
+
+  .new-bold {
+    font-weight: 400;
+  }
+
+  .new-light {
+    font-weight: 200;
+  }
 }
 
 footer.site {

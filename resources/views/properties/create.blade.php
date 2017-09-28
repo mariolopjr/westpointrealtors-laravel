@@ -1,56 +1,52 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <h1>Create a property</h1>
-
-    <hr>
+    <p class="title has-text-centered is-uppercase">
+        <span class="new-bold">New</span> <span class="new-light">Property</span>
+    </p>
 
     <div class="container">
-        <form method="POST" action="/properties">
+        <form method="POST" action="/properties" enctype="multipart/form-data">
 
             {{ csrf_field() }}
 
-            <div class="field">
-                <label class="label" for="title">Title</label>
-                <p class="control">
-                    <input class="input" type="text" name="title" id="title" required />
-                </p>
-            </div>
-            <div class="field">
-                <label class="label" for="type">Select property type</label>
-                <p class="control">
-                    <span class="select">
-                        <select name="type" id="type">
-                            <option value="1">Single Family Home</option>
-                            <option value="2">Apartment</option>
-                            <option value="3">Condo</option>
-                            <option value="4">Townhouse</option>
-                        </select>
-                    </span>
-                </p>
-            </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" name="address" id="address" required />
-            </div>
-            <div class="form-group">
-                <label for="status">Select property status</label>
-                <select class="form-control" name="status" id="status">
+            <b-field label="Title">
+                <b-input type="text" name="title" id="title" required></b-input>
+            </b-field>
+            <b-field label="Property type">
+                <b-select name="type" id="type" placeholder="Select property type" required>
+                    <option value="1">Single Family Home</option>
+                    <option value="2">Apartment</option>
+                    <option value="3">Condo</option>
+                    <option value="4">Townhouse</option>
+                </b-select>
+            </b-field>
+            <b-field label="Address">
+                <b-input type="text" name="address" id="address" onFocus="geolocate()" required></b-input>
+            </b-field>
+            <b-field label="Property status">
+                <b-select name="status" id="status" placeholder="Select property status" required>
                     <option value="1">Available</option>
                     <option value="2">Coming Soon</option>
                     <option value="3">Pending</option>
                     <option value="4">Under Contract</option>
-                    <option value="5s">Sold</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" step="0.01" min="0" name="price" id="price">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea name="description" id="description" cols="60" rows="10"></textarea>
-            </div>
+                    <option value="5">Sold</option>
+                </b-select>
+            </b-field>
+            <b-field label="Price">
+                <b-input placeholder="Price"
+                    type="number"
+                    name="price"
+                    id="price"
+                    min="0"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    required>
+                </b-input>
+            </b-field>
+            <b-field label="Description">
+                <b-input name="description" id="editor" type="textarea" required></b-input>
+            </b-field>
             <div class="form-group">
                 <label for="home_size">Home Size</label>
                 <input type="number" step="0.01" min="0" name="home_size" id="home_size">
@@ -79,6 +75,7 @@
                 <label for="hoa_fees">HOA Fees</label>
                 <input type="number" step="0.01" min="0" name="hoa_fees" id="hoa_fees">
             </div>
+            <div class="dropzone" id="dropzone"></div>
             <div class="form-group">
                 <button type="submit">Submit</button>
             </div>

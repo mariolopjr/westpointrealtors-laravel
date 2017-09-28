@@ -114,6 +114,16 @@ body {
   opacity: 1;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 /* Advanced Search */
 
 .search-advanced {
@@ -616,6 +626,18 @@ a.nav-item.is-tab.is-active {
 .affiliates img {
   border-radius: 7px;
   width: 200px;
+}
+
+.title {
+  padding: 2rem 0;
+}
+
+.title .new-bold {
+  font-weight: 400;
+}
+
+.title .new-light {
+  font-weight: 200;
 }
 
 footer.site {

@@ -66,5 +66,74 @@ function hideMap() {
     document.getElementById('map-btn').classList.add('not-active');
 }
 
-initMap();
+var map = document.getElementById("map");
+if (typeof(map) != 'undefined' && map != null) {
+    initMap();
+}
+
+function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+        {types: ['geocode']});
+}
+
+function geolocate() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            var circle = new google.maps.Circle({
+                center: geolocation,
+                radius: position.coords.accuracy
+            });
+
+            autocomplete.setBounds(circle.getBounds());
+        });
+    }
+}
+
+tinymce.init({
+    selector: 'textarea#editor',
+    branding: false,
+    height: 300,
+    menubar: false,
+    plugins: [
+        'advlist autolink lists link image charmap print preview anchor textcolor',
+        'searchreplace visualblocks code fullscreen',
+        'insertdatetime media table contextmenu paste code help'
+    ],
+    toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+    content_css: [
+        '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+        '//www.tinymce.com/css/codepen.min.css'],
+});
+
+Dropzone.options.dropzone = {
+    url: '/properties',
+    autoProcessQueue: false,
+    uploadMultiple: true,
+    parallelUploads: 5,
+    maxFiles: 5,
+    maxFilesize: 1,
+    acceptedFiles: 'image/*',
+    addRemoveLinks: true,
+
+    init: function() {
+        dzClosure = this;
+
+        document.getElementById("submit-all").addEventListener("click", function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dzClosure.processQueue();
+        });
+
+        this.on("sendingmultiple", function(data, xhr, formData) {
+            formData.append("firstname", jQuery("#firstname").val());
+            formData.append("lastname", jQuery("#lastname").val());
+        });
+    }
+}
 </script>
