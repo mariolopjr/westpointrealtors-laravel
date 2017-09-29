@@ -142,7 +142,7 @@
                     </header>
                     <div class="card-content">
                         <div class="content">
-                            {{ $property->description }}
+                            {!! $property->description !!}
                         </div>
                     </div>
                 </div>

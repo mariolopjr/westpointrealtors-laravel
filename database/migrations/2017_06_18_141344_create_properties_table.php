@@ -27,7 +27,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('bedrooms');
             $table->integer('bathrooms');
             $table->integer('garages');
-            $table->date('year');
+            $table->string('year');
             $table->double('hoa_fees');
             $table->boolean('rental')->default(false);
             $table->boolean('favorite')->default(false);

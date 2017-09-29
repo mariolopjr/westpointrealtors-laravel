@@ -83,11 +83,11 @@ class PropertyController extends Controller
             'bedrooms',
             'bathrooms',
             'garages',
+            'year',
             'hoa_fees'
         ]));
-        $property->date('Y', request('year'));
         $property->user_id = auth()->id();
-        $fileAdders = $property
+        $property
             ->addAllMediaFromRequest()
             ->each(function ($fileAdder) {
                 $fileAdder->toMediaCollection('images', 'images');

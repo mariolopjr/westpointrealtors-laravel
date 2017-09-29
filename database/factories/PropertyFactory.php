@@ -14,7 +14,7 @@ $factory->define(App\Property::class, function (Faker\Generator $faker) {
         'bedrooms' => $faker->numberBetween(1, 30),
         'bathrooms' => $faker->numberBetween(1, 20),
         'garages' => $faker->numberBetween(0, 10),
-        'year' => $faker->date('Y-m-d'),
+        'year' => $faker->date('Y'),
         'hoa_fees' => $faker->randomFloat(2, 0, 100000),
         'rental' => $faker->boolean(20),
         'favorite' => $faker->boolean(10),

@@ -39,6 +39,7 @@
                     name="price"
                     id="price"
                     min="0"
+                    step="0.01"
                     inputmode="numeric"
                     required>
                 </b-input>
@@ -52,6 +53,7 @@
                     name="home_size"
                     id="home_size"
                     min="0"
+                    step="0.01"
                     inputmode="numeric"
                     required>
                 </b-input>
@@ -62,6 +64,7 @@
                     name="lot_size"
                     id="lot_size"
                     min="0"
+                    step="0.01"
                     inputmode="numeric"
                     required>
                 </b-input>
@@ -103,7 +106,6 @@
                     id="year"
                     min="1801"
                     max="2099"
-                    step="1"
                     inputmode="numeric"
                     pattern="[0-9]{4}"
                     required>
