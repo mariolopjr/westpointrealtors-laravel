@@ -681,3 +681,9 @@ footer.site .disclaimer .contact-number:not(:first-of-type) {
   color: #fff;
 }
 
+/* Admin */
+
+.admin {
+  margin: 1rem;
+}
+

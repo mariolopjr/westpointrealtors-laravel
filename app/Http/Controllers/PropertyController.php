@@ -87,7 +87,7 @@ class PropertyController extends Controller
             'hoa_fees'
         ]));
         $property->user_id = auth()->id();
-        $property
+        $fileAdders = $property
             ->addAllMediaFromRequest()
             ->each(function ($fileAdder) {
                 $fileAdder->toMediaCollection('images', 'images');
@@ -144,6 +144,21 @@ class PropertyController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getActive($id)
+    {
+        $active = Property::find($id)->active;
+        return compact('active');
+    }
+
+    public function setActive($id, $val)
+    {
+        $property = Property::find($id);
+        $property->active = $val;
+        $property->save();
+        $active = Property::find($id)->active;
+        return compact('active');
     }
 
     public function status()

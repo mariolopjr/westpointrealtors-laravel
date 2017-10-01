@@ -1254,7 +1254,9 @@ var app = new Vue({
 
   data: function data() {
     return {
-      dropFiles: []
+      dropFiles: [],
+      tableSortDirection: "desc",
+      tablePerPage: 10
     };
   },
   mounted: function mounted() {},
@@ -1266,6 +1268,9 @@ var app = new Vue({
   methods: {
     deleteDropFile: function deleteDropFile(index) {
       this.dropFiles.splice(index, 1);
+    },
+    toDate: function toDate(date) {
+      return new Date(date).toLocaleDateString();
     }
   }
 });

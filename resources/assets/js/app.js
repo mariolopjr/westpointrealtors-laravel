@@ -35,6 +35,8 @@ const app = new Vue({
     data() {
       return {
         dropFiles: [],
+        tableSortDirection: "desc",
+        tablePerPage: 10
       }
     },
 
@@ -48,6 +50,10 @@ const app = new Vue({
     methods: {
       deleteDropFile(index) {
         this.dropFiles.splice(index, 1)
+      },
+
+      toDate(date) {
+        return new Date(date).toLocaleDateString()
       }
     }
 });

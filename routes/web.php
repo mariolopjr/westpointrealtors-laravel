@@ -44,8 +44,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         ->name('index');
     Route::post('/', 'AdminController@store')
         ->name('store');
+    Route::get('/property', 'AdminController@propertyList')
+        ->name('properties');
     Route::get('/property/create', 'PropertyController@create')
         ->name('create');
+    Route::get('/property/{id}/active', 'PropertyController@getActive')
+        ->name('getActive');
+    Route::get('/property/{id}/active/{val}', 'PropertyController@setActive')
+        ->name('setActive');
 });
 
 // Agents
