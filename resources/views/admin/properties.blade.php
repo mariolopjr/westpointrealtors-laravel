@@ -53,6 +53,28 @@
                             <br>
                             <div v-html="props.row.description"></div>
                         </p>
+                        <b-field grouped>
+                            <div class="field" is-flex>
+                                <b-switch
+                                v-on:input="updateFavorite($event, props.row.id)"
+                                :value="props.row.favorite"
+                                true-value="1"
+                                false-value="0"
+                                type="is-success">
+                                    Favorite
+                                </b-switch>
+                            </div>
+                            <p class="control">
+                                <a class="button is-primary">
+                                    Edit
+                                </a>
+                            </p>
+                            <p class="control">
+                                <a :href="'/admin/property/' + props.row.id + '/active/0'" class="button is-danger">
+                                    Archive
+                                </a>
+                            </p>
+                        </b-field>
                     </div>
                 </div>
             </article>

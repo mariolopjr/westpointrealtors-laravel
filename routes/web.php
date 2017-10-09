@@ -52,6 +52,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         ->name('getActive');
     Route::get('/property/{id}/active/{val}', 'PropertyController@setActive')
         ->name('setActive');
+    Route::get('/property/{id}/favorite', 'PropertyController@getFavorite')
+        ->name('getActive');
+    Route::get('/property/{id}/favorite/{val}', 'PropertyController@setFavorite')
+        ->name('setActive');
 });
 
 // Agents

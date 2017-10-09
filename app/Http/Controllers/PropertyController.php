@@ -157,8 +157,21 @@ class PropertyController extends Controller
         $property = Property::find($id);
         $property->active = $val;
         $property->save();
-        $active = Property::find($id)->active;
-        return compact('active');
+        return redirect()->to('/admin/property');
+    }
+
+    public function getFavorite($id)
+    {
+        $favorite = Property::find($id)->favorite;
+        return compact('favorite');
+    }
+
+    public function setFavorite($id, $val)
+    {
+        $property = Property::find($id);
+        $property->favorite = $val;
+        $property->save();
+        return redirect()->to('/admin/property');
     }
 
     public function status()

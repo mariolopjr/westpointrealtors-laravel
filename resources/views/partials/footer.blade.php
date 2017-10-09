@@ -18,7 +18,22 @@
     <div class="lower-footer">
         <div class="container">
             <span class="is-uppercase">© West Point Real Estate</span>
-            <a href="{{ url('/admin') }}" class="is-pulled-right">Agent Login</a>
+            @guest
+                <a href="{{ url('/admin') }}" class="is-pulled-right">Agent Login</a>
+            @endauth
+            @auth
+                <a
+                    class="is-pulled-right"
+                    href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();"
+                >
+                    Agent Logout
+                </a>
+                <form class="hidden" id="logout-form" action="{{ route('logout') }}" method="POST">
+                    {{ csrf_field() }}
+                </form>
+            @endauth
         </div>
     </div>
 </footer>

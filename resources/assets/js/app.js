@@ -54,6 +54,12 @@ const app = new Vue({
 
       toDate(date) {
         return new Date(date).toLocaleDateString()
+      },
+
+      updateFavorite(e, id) {
+        axios
+            .get('/admin/property/' + id + '/favorite/' + e)
+            .then(response => console.log(response.data['favorite']));
       }
     }
 });

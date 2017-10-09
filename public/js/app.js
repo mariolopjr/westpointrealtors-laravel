@@ -1271,6 +1271,11 @@ var app = new Vue({
     },
     toDate: function toDate(date) {
       return new Date(date).toLocaleDateString();
+    },
+    updateFavorite: function updateFavorite(e, id) {
+      axios.get('/admin/property/' + id + '/favorite/' + e).then(function (response) {
+        return console.log(response.data['favorite']);
+      });
     }
   }
 });
