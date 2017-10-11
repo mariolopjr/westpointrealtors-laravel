@@ -48,6 +48,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         ->name('properties');
     Route::get('/property/create', 'PropertyController@create')
         ->name('create');
+    Route::get('/property/{property}/edit', 'PropertyController@edit')
+        ->name('edit');
+    Route::post('/property/{property}/edit', 'PropertyController@update')
+        ->name('update');
     Route::get('/property/{id}/active', 'PropertyController@getActive')
         ->name('getActive');
     Route::get('/property/{id}/active/{val}', 'PropertyController@setActive')

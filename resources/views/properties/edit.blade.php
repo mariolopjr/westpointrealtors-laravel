@@ -2,7 +2,7 @@
 
 @section('content')
     <p class="title has-text-centered is-uppercase">
-        <span class="new-bold">New</span> <span class="new-light">Property</span>
+        <span class="new-bold">Edit</span> <span class="new-light">Property</span>
     </p>
 
     <div class="container">
@@ -11,10 +11,12 @@
             {{ csrf_field() }}
 
             <b-field label="Title">
-                <b-input type="text" name="title" id="title" required></b-input>
+                <b-input type="text" name="title" id="title" required
+                    value="{{ $property->title }}"></b-input>
             </b-field>
             <b-field label="Property type">
-                <b-select name="type" id="type" placeholder="Select property type" required>
+                <b-select name="type" id="type" placeholder="Select property type" required
+                value="{{ $property->type }}">
                     <option
                         v-for="type in {!! htmlspecialchars($types->toJson(), ENT_QUOTES, 'UTF-8') !!}"
                         :value="type.id"
@@ -24,10 +26,12 @@
                 </b-select>
             </b-field>
             <b-field label="Address">
-                <b-input type="text" name="address" id="address" onFocus="geolocate()" required></b-input>
+                <b-input type="text" name="address" id="address" onFocus="geolocate()" required
+                    value="{{ $property->address }}"></b-input>
             </b-field>
             <b-field label="Property status">
-                <b-select name="status_id" id="status_id" placeholder="Select property status" required>
+                <b-select name="status_id" id="status_id" placeholder="Select property status" required
+                value="{{ $property->status_id }}">
                     <option
                         v-for="status in {!! htmlspecialchars($statuses->toJson(), ENT_QUOTES, 'UTF-8') !!}"
                         :value="status.id"
@@ -44,11 +48,13 @@
                     min="0"
                     step="0.01"
                     inputmode="numeric"
-                    required>
+                    required
+                    value="{{ $property->price }}">
                 </b-input>
             </b-field>
             <b-field label="Description">
-                <b-input name="description" id="editor" type="textarea"></b-input>
+                <b-input name="description" id="editor" type="textarea"
+                    value="{{ $property->description }}"></b-input>
             </b-field>
             <b-field label="Home size">
                 <b-input placeholder="in sq ft"
@@ -58,7 +64,8 @@
                     min="0"
                     step="0.01"
                     inputmode="numeric"
-                    required>
+                    required
+                    value="{{ $property->home_size }}">
                 </b-input>
             </b-field>
             <b-field label="Lot size">
@@ -69,7 +76,8 @@
                     min="0"
                     step="0.01"
                     inputmode="numeric"
-                    required>
+                    required
+                    value="{{ $property->lot_size }}">
                 </b-input>
             </b-field>
             <b-field label="Bedrooms">
@@ -79,7 +87,8 @@
                     id="bedrooms"
                     min="0"
                     inputmode="numeric"
-                    required>
+                    required
+                    value="{{ $property->bedrooms }}">
                 </b-input>
             </b-field>
             <b-field label="Bathrooms">
@@ -89,7 +98,8 @@
                     id="bathrooms"
                     min="0"
                     inputmode="numeric"
-                    required>
+                    required
+                    value="{{ $property->bathrooms }}">
                 </b-input>
             </b-field>
             <b-field label="Garages">
@@ -99,7 +109,8 @@
                     id="garages"
                     min="0"
                     inputmode="numeric"
-                    required>
+                    required
+                    value="{{ $property->garages }}">
                 </b-input>
             </b-field>
             <b-field label="Year">
@@ -111,7 +122,8 @@
                     max="2099"
                     inputmode="numeric"
                     pattern="[0-9]{4}"
-                    required>
+                    required
+                    value="{{ $property->year }}">
                 </b-input>
             </b-field>
             <b-field label="HOA Fees">
@@ -121,7 +133,8 @@
                     id="hoa_fees"
                     min="0"
                     inputmode="numeric"
-                    required>
+                    required
+                    value="{{ $property->hoa_fees }}">
                 </b-input>
             </b-field>
             <section>

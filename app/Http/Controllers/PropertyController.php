@@ -45,7 +45,9 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        return view('properties.create');
+        $statuses = \App\Status::all();
+        $types = \App\Type::all();
+        return view('properties.create', compact('statuses', 'types'));
     }
 
     /**
@@ -112,15 +114,12 @@ class PropertyController extends Controller
         return view('properties.show', compact('property'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $property = Property::find($id);
+        $statuses = \App\Status::all();
+        $types = \App\Type::all();
+        return view('properties.edit', compact('property', 'statuses', 'types'));
     }
 
     /**

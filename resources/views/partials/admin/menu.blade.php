@@ -14,7 +14,7 @@
       <a href="{{ url('/admin/property') }}">Manage Properties</a>
       <ul>
         <li><a href="{{ url('/admin/property') }}">Properties</a></li>
-        <li><a>New Property</a></li>
+        <li><a href="{{ url('/admin/property/create') }}">New Property</a></li>
       </ul>
     </li>
     <li>
