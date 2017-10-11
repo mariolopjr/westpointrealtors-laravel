@@ -1254,6 +1254,7 @@ var app = new Vue({
 
   data: function data() {
     return {
+      displayArchived: false,
       dropFiles: [],
       tableSortDirection: "desc",
       tablePerPage: 10
@@ -1272,10 +1273,8 @@ var app = new Vue({
     toDate: function toDate(date) {
       return new Date(date).toLocaleDateString();
     },
-    updateFavorite: function updateFavorite(e, id) {
-      axios.get('/admin/property/' + id + '/favorite/' + e).then(function (response) {
-        return console.log(response.data['favorite']);
-      });
+    updateProperty: function updateProperty(e, id, prop) {
+      axios.get('/admin/property/' + id + '/' + prop + '/' + e);
     }
   }
 });

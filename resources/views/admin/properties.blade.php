@@ -9,6 +9,9 @@
             <option value="50">50 per page</option>
             <option value="100">100 per page</option>
         </b-select>
+        <div class="control is-flex">
+            <b-switch v-model="displayArchived" type="is-success">Display Archived</b-switch>
+        </div>
     </b-field>
     <b-table
         :data="{!! htmlspecialchars($properties->toJson(), ENT_QUOTES, 'UTF-8') !!}"
@@ -18,7 +21,9 @@
         :pagination-simple="false"
         :default-sort-direction="tableSortDirection"
         default-sort="created_at"
-        :mobile-cards="true">
+        :mobile-cards="true"
+        icon-pack="fa"
+        :row-class="(row, index) => row.active === 0 ? displayArchived ? '' : 'is-hidden' : ''">
 
         <template scope="props">
             <b-table-column field="status.name" label="Status" sortable>
@@ -54,9 +59,9 @@
                             <div v-html="props.row.description"></div>
                         </p>
                         <b-field grouped>
-                            <div class="field" is-flex>
+                            <div class="control is-flex">
                                 <b-switch
-                                v-on:input="updateFavorite($event, props.row.id)"
+                                v-on:input="updateProperty($event, props.row.id, 'favorite')"
                                 :value="props.row.favorite"
                                 true-value="1"
                                 false-value="0"
@@ -64,14 +69,19 @@
                                     Favorite
                                 </b-switch>
                             </div>
+                            <div class="control is-flex">
+                                <b-switch
+                                v-on:input="updateProperty($event, props.row.id, 'active')"
+                                :value="props.row.active"
+                                true-value="0"
+                                false-value="1"
+                                type="is-success">
+                                    Archive
+                                </b-switch>
+                            </div>
                             <p class="control">
                                 <a class="button is-primary">
                                     Edit
-                                </a>
-                            </p>
-                            <p class="control">
-                                <a :href="'/admin/property/' + props.row.id + '/active/0'" class="button is-danger">
-                                    Archive
                                 </a>
                             </p>
                         </b-field>

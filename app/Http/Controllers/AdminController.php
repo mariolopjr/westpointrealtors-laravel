@@ -21,7 +21,7 @@ class AdminController extends Controller
     public function propertyList()
     {
         // Get all latest properties with status relationship
-        $properties = Property::latest()->active()->with('status')->with('type')->get();
+        $properties = Property::latest()->with('status')->with('type')->get();
 
         foreach ($properties as $property) {
             $property->mainImage = url($property->getFirstMediaUrl('images', 'thumb'));

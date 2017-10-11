@@ -34,6 +34,7 @@ const app = new Vue({
 
     data() {
       return {
+        displayArchived: false,
         dropFiles: [],
         tableSortDirection: "desc",
         tablePerPage: 10
@@ -56,10 +57,9 @@ const app = new Vue({
         return new Date(date).toLocaleDateString()
       },
 
-      updateFavorite(e, id) {
+      updateProperty(e, id, prop) {
         axios
-            .get('/admin/property/' + id + '/favorite/' + e)
-            .then(response => console.log(response.data['favorite']));
+          .get('/admin/property/' + id + '/' + prop + '/' + e);
       }
     }
 });
