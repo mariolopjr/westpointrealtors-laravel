@@ -6,7 +6,7 @@
     </p>
 
     <div class="container">
-        <form method="POST" action="/properties" enctype="multipart/form-data" id="new-property">
+        <form method="POST" action="/admin/property/{{ $property->id }}/edit" enctype="multipart/form-data" id="new-property">
 
             {{ csrf_field() }}
 

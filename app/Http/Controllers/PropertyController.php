@@ -99,6 +99,47 @@ class PropertyController extends Controller
         return redirect('/');
     }
 
+    public function update(Request $request, $id)
+    {
+        $property = Property::find($id);
+
+        $this->validate(request(), [
+            'title' => 'required|max:250',
+            'type' => 'required',
+            'address' => 'required',
+            'status_id' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'home_size' => 'required',
+            'lot_size' => 'required',
+            'bedrooms' => 'required',
+            'bathrooms' => 'required',
+            'garages' => 'required',
+            'year' => 'required',
+            'hoa_fees' => 'required'
+        ]);
+
+        $property->update(request([
+            'title',
+            'type',
+            'address',
+            'status_id',
+            'price',
+            'description',
+            'home_size',
+            'lot_size',
+            'bedrooms',
+            'bathrooms',
+            'garages',
+            'year',
+            'hoa_fees'
+        ]));
+        $property->user_id = auth()->id();
+        $property->save();
+
+        return redirect('/admin/property');
+    }
+
     /**
      * Display the specified resource.
      *
@@ -123,24 +164,17 @@ class PropertyController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+
+    public function contact()
     {
         //
     }

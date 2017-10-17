@@ -28,6 +28,12 @@ Route::get('/', function () {
     return view('index', compact('properties'));
 });
 
+Route::get('/mailable', function () {
+    $property = App\Property::find(1);
+
+    return new App\Mail\PropertyContact($property);
+});
+
 // Properties
 Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
     Route::get('/', 'PropertyController@index')
@@ -36,6 +42,8 @@ Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
         ->name('store');
     Route::get('/{property}', 'PropertyController@show')
         ->name('show');
+    Route::post('/{property}', 'PropertyController@contact')
+        ->name('contact');
 });
 
 // Admin
@@ -48,9 +56,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         ->name('properties');
     Route::get('/property/create', 'PropertyController@create')
         ->name('create');
-    Route::get('/property/{property}/edit', 'PropertyController@edit')
+    Route::get('/property/{id}/edit', 'PropertyController@edit')
         ->name('edit');
-    Route::post('/property/{property}/edit', 'PropertyController@update')
+    Route::post('/property/{id}/edit', 'PropertyController@update')
         ->name('update');
     Route::get('/property/{id}/active', 'PropertyController@getActive')
         ->name('getActive');
