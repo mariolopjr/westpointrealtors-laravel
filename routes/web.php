@@ -28,12 +28,6 @@ Route::get('/', function () {
     return view('index', compact('properties'));
 });
 
-Route::get('/mailable', function () {
-    $property = App\Property::find(1);
-
-    return new App\Mail\PropertyContact($property);
-});
-
 // Properties
 Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
     Route::get('/', 'PropertyController@index')

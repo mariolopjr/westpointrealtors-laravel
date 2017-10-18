@@ -60,6 +60,11 @@ const app = new Vue({
       updateProperty(e, id, prop) {
         axios
           .get('/admin/property/' + id + '/' + prop + '/' + e);
+      },
+
+      submitForm(e, form) {
+        e.preventDefault();
+        document.getElementById(form).submit();
       }
     }
 });

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Property;
+use App\Mail\PropertyContact;
+use App\Mail\PropertyContactSuccess;
+use App\Mail\PropertyCustomer;
 use App\Repositories\Properties;
 use Illuminate\Http\Request;
 use JavaScript;
@@ -174,9 +177,11 @@ class PropertyController extends Controller
         //
     }
 
-    public function contact()
+    public function contact(Request $request, Property $property)
     {
-        //
+        \Mail::to('westpointagents@gmail.com')->send(new PropertyContact($request, $property));
+        \Mail::to($request->email)->send(new PropertyCustomer($request, $property));
+        return new PropertyContactSuccess($request, $property);
     }
 
     public function getActive($id)

@@ -591,8 +591,8 @@ a.nav-item.is-tab.is-active {
   font-weight: 200;
 }
 
-.card.contact-us-card input,
-.card.contact-us-card textarea {
+.card.contact-us-card .card-content input,
+.card.contact-us-card .card-content textarea {
   border: 0;
   border-radius: 0;
   -webkit-box-shadow: none;
@@ -604,10 +604,10 @@ a.nav-item.is-tab.is-active {
   resize: none;
 }
 
-.card.contact-us-card input:active,
-.card.contact-us-card input:focus,
-.card.contact-us-card textarea:active,
-.card.contact-us-card textarea:focus {
+.card.contact-us-card .card-content input:active,
+.card.contact-us-card .card-content input:focus,
+.card.contact-us-card .card-content textarea:active,
+.card.contact-us-card .card-content textarea:focus {
   outline: 0;
 }
 

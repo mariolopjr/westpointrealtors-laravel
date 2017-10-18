@@ -1,12 +1,16 @@
 @component('mail::message')
-# Order Shipped
+# Customer Contact
 
-Your order has been shipped!
-
-@component('mail::button', ['url' => $property->id])
-View Order
+@component('mail::panel')
+Name: {{ $request->name }}<br/>
+Email: {{ $request->email }}<br/>
+Number: {{ $request->number }}<br/>
+Message: {{ $request->message }}<br/>
 @endcomponent
 
-Thanks,<br>
-{{ config('app.name') }}
+@component('mail::button', ['url' => url('/properties/' . $property->slug)])
+View Property
+@endcomponent
+
+Address: {{ $property->address }}
 @endcomponent

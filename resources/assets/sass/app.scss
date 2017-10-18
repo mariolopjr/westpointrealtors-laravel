@@ -537,8 +537,8 @@ $outside-circle-margin: ($outside-circle-size / 2) * -1;
     font-weight: 200;
   }
 
-  input,
-  textarea {
+  .card-content input,
+  .card-content textarea {
     border: 0;
     border-radius: 0;
     box-shadow: none;

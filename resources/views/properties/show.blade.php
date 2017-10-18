@@ -106,23 +106,24 @@
                         <p class="subtitle has-text-centered">
                             About this property
                         </p>
-                        <form>
+                        <form method="POST" action="{{ url('/properties/' . $property->slug) }}" id="contact-form">
+                            {{ csrf_field() }}
                             <b-field>
-                                <b-input placeholder="Your name"></b-input>
+                                <b-input name="name" placeholder="Your name"></b-input>
                             </b-field>
                             <b-field>
-                                <b-input type="email" placeholder="Your email"></b-input>
+                                <b-input name="email" type="email" placeholder="Your email"></b-input>
                             </b-field>
                             <b-field>
-                                <b-input placeholder="Your contact Number"></b-input>
+                                <b-input name="number" placeholder="Your contact Number"></b-input>
                             </b-field>
                             <b-field>
-                                <b-input maxlength="200" type="textarea" placeholder="Hi! I am interested in the property because..."></b-input>
+                                <b-input name="message" maxlength="200" type="textarea" placeholder="Hi! I am interested in the property because..."></b-input>
                             </b-field>
                         </form>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item">
+                        <p class="card-footer-item" @click="submitForm($event, 'contact-form')">
                             <span>
                                 Send message
                             </span>

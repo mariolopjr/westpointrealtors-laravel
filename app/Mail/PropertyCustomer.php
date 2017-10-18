@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Http\Request;
 use App\Property;
 
-class PropertyContact extends Mailable
+class PropertyCustomer extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -35,6 +35,6 @@ class PropertyContact extends Mailable
     public function build()
     {
         return $this->from('mailgun@westpointrealtors.com')
-                    ->markdown('emails.property.contact');
+                    ->markdown('emails.property.customer');
     }
 }

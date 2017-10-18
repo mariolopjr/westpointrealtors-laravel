@@ -1275,6 +1275,10 @@ var app = new Vue({
     },
     updateProperty: function updateProperty(e, id, prop) {
       axios.get('/admin/property/' + id + '/' + prop + '/' + e);
+    },
+    submitForm: function submitForm(e, form) {
+      e.preventDefault();
+      document.getElementById(form).submit();
     }
   }
 });
