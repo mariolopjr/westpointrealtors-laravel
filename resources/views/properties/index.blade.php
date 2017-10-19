@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
+@section('pageTitle', 'Properties - West Point Real Estate')
+
 @section('content')
     {{-- <nav class="navbar has-shadow property-nav">
         <div class="container">

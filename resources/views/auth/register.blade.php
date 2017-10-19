@@ -1,5 +1,7 @@
 @extends('layouts.frontcontentonly')
 
+@section('pageTitle', 'Register - West Point Real Estate')
+
 @section('content')
     <section class="hero is-fullheight login-hero">
         <div class="hero-head">

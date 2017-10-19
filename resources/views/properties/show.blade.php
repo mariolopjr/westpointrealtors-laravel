@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
+@section('pageTitle', $property->title . '- West Point Real Estate')
+
 @section('content')
     <div class="container house">
         <div class="house-titles has-text-centered">

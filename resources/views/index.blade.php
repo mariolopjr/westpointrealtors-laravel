@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
+@section('pageTitle', 'West Point Real Estate')
+
 @section('content')
     <section class="hero is-small">
         <div class="hero-body index-hero">

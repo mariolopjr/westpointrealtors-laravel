@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
+@section('pageTitle', 'Create New Property')
+
 @section('content')
     <p class="title has-text-centered is-uppercase">
         <span class="new-bold">New</span> <span class="new-light">Property</span>

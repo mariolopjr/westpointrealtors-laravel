@@ -1,5 +1,7 @@
 @extends('layouts.backend')
 
+@section('pageTitle', 'Administration - Properties')
+
 @section('content')
 <section>
     <b-field grouped group-multiline>

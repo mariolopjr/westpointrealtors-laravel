@@ -1,5 +1,7 @@
 @extends('layouts.frontend')
 
+@section('pageTitle', 'Edit - ' . $property->title)
+
 @section('content')
     <p class="title has-text-centered is-uppercase">
         <span class="new-bold">Edit</span> <span class="new-light">Property</span>

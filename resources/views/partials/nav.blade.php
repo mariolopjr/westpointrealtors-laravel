@@ -22,9 +22,9 @@
             <a class="navbar-item" href="{{ url('/forms') }}">
                 Forms
             </a>
-            <a class="navbar-item" href="{{ url('/contact') }}">
+            {{-- <a class="navbar-item" href="{{ url('/contact') }}">
                 Contact
-            </a>
+            </a>--}}
         </div>
         {{-- <div class="navbar-end">
             @guest

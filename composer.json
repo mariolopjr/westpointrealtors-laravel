@@ -4,6 +4,12 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "url": "https://github.com/mariolopjr/laravel-under-construction.git",
+            "type": "git"
+        }
+    ],
     "require": {
         "php": ">=7.0",
         "cviebrock/eloquent-sluggable": "^4.3",
@@ -15,10 +21,11 @@
         "spatie/laravel-medialibrary": "^6.0.0"
     },
     "require-dev": {
-        "filp/whoops": "~2.0",
         "barryvdh/laravel-debugbar": "^3.0",
         "barryvdh/laravel-ide-helper": "^2.4",
+        "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.7",
+        "jrl05k/laravel-under-construction": "dev-master",
         "laravelcollective/html": "^5.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~6"
