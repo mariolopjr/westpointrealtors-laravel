@@ -1276,6 +1276,10 @@ var app = new Vue({
     updateProperty: function updateProperty(e, id, prop) {
       axios.get('/admin/property/' + id + '/' + prop + '/' + e);
     },
+    deletePicture: function deletePicture(e, imageId, propertyId) {
+      axios.get('/admin/property/' + propertyId + '/picture/' + imageId + '/delete');
+      e.target.parentElement.className += " hidden";
+    },
     submitForm: function submitForm(e, form) {
       e.preventDefault();
       document.getElementById(form).submit();

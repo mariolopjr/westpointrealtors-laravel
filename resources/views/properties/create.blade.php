@@ -122,6 +122,7 @@
                     name="hoa_fees"
                     id="hoa_fees"
                     min="0"
+                    step="0.01"
                     inputmode="numeric"
                     required>
                 </b-input>
@@ -158,7 +159,7 @@
                     </span>
                 </div>
             </section>
-            <button id="submit" class="button is-primary" type="submit">Submit</button>
+            <button id="submit" class="button is-primary property-button" type="submit">Submit</button>
         </form>
 
         @include('partials.formerrors')

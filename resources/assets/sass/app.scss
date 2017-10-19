@@ -628,6 +628,24 @@ footer.site {
   }
 }
 
+.property-button {
+  margin-bottom: 2rem;
+  margin-top: .5rem;
+}
+
+.image {
+  .delete {
+    position: absolute;
+    right: .3rem;
+    top: .3rem;
+  }
+}
+
+.uploaded-image.image {
+  display: inline-block;
+  margin-right: .2rem;
+}
+
 /* Admin */
 .admin {
   margin: 1rem;

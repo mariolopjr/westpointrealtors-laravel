@@ -212,6 +212,13 @@ class PropertyController extends Controller
         return redirect()->to('/admin/property');
     }
 
+    public function deletePicture($id, $val)
+    {
+        $property = Property::find($id);
+        $property->deleteMedia($val);
+        return redirect()->to('/admin/property');
+    }
+
     public function status()
     {
         $statuses = \App\Status::all();

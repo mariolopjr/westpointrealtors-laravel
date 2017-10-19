@@ -62,6 +62,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         ->name('getActive');
     Route::get('/property/{id}/favorite/{val}', 'PropertyController@setFavorite')
         ->name('setActive');
+    Route::get('/property/{id}/picture/{val}/delete', 'PropertyController@deletePicture')
+        ->name('deletePicture');
 });
 
 // Agents

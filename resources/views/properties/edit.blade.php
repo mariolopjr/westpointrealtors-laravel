@@ -134,10 +134,24 @@
                     name="hoa_fees"
                     id="hoa_fees"
                     min="0"
+                    step="0.01"
                     inputmode="numeric"
                     required
                     value="{{ $property->hoa_fees }}">
                 </b-input>
+            </b-field>
+            <b-field label="Uploaded Pictures"
+            type="is-danger"
+            message="WARNING &mdash; Removing a picture is immediate and permanent">
+                <div class="control is-clearfix">
+                    @foreach($property->getMedia('images') as $image)
+                        <figure class="uploaded-image image is-128x128">
+                            <img src="{{ url($image->getUrl('thumb')) }}" alt="Photo {{ $loop->iteration }}">
+                            <button type="button" class="delete"
+                                v-on:click="deletePicture($event, {{ $image->id }}, {{ $property->id }})"></button>
+                        </figure>
+                    @endforeach
+                </div>
             </b-field>
             <section>
                 <b-field>
@@ -171,7 +185,13 @@
                     </span>
                 </div>
             </section>
-            <button id="submit" class="button is-primary" type="submit">Submit</button>
+            <b-field>
+                <p class="control">
+                    <button id="submit" class="button is-primary property-button" type="submit">
+                        Submit
+                    </button>
+                </p>
+            </b-field>
         </form>
 
         @include('partials.formerrors')

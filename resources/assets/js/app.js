@@ -62,6 +62,12 @@ const app = new Vue({
           .get('/admin/property/' + id + '/' + prop + '/' + e);
       },
 
+      deletePicture(e, imageId, propertyId) {
+        axios
+          .get('/admin/property/' + propertyId + '/picture/' + imageId + '/delete');
+        e.target.parentElement.className += " hidden";
+      },
+
       submitForm(e, form) {
         e.preventDefault();
         document.getElementById(form).submit();
