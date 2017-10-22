@@ -20,10 +20,13 @@ Route::get('/', function () {
 
     $properties = App\Property::inRandomOrder()->favorite()->active()->with('status')->get();
 
-    if($propertiesCount = count($properties) < 4) {
+    if($propertiesCount = count($properties) < 5) {
         $additionalProperties = App\Property::latest()->favorite(false)->active()->get();
-        $start = random_int(0, count($additionalProperties) - (5 - $propertiesCount));
-        $additionalProperties = $additionalProperties->slice($start, 4 - $propertiesCount);
+
+        if($additionalProperties > 4) {
+            $start = random_int(0, count($additionalProperties) - (5 - $propertiesCount));
+            $additionalProperties = $additionalProperties->slice($start, 4 - $propertiesCount);
+        }
 
         foreach ($additionalProperties as $property) {
             $properties->push($property);
