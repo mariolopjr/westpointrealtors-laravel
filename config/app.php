@@ -181,7 +181,6 @@ return [
         /*
          * IDE Service Providers...
          */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
 
     ],
 
