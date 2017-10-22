@@ -14,11 +14,17 @@
                     Our favorite properties
                 </h2>
 
-                <div class="columns">
-                    @foreach($properties as $property)
-                        @include('properties.card')
-                    @endforeach
-                </div>
+                @if($properties->count() > 0)
+                    <div class="columns">
+                        @foreach($properties as $property)
+                            @include('properties.card')
+                        @endforeach
+                    </div>
+                @else
+                    <div class="no-properties-index is-uppercase">
+                        <h1>No properties available</h1>
+                    </div>
+                @endif
             </div>
         </div>
     </section>

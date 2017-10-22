@@ -12,6 +12,12 @@
 */
 
 Route::get('/', function () {
+
+    if(App\Property::count() == 0) {
+        $properties = collect(new App\Property);
+        return view('index', compact('properties'));
+    }
+
     $properties = App\Property::inRandomOrder()->favorite()->active()->with('status')->get();
 
     if($propertiesCount = count($properties) < 4) {

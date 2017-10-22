@@ -27,15 +27,21 @@
         </div>
     </nav> --}}
     <div class="container property-list">
-        @foreach($properties as $property)
-            @if(($loop->iteration - 1) % 4 == 0 || $loop->first)
-                <div class="columns">
-            @endif
-            @include('properties.card')
-            @if($loop->iteration % 4 == 0 || $loop->last)
-                </div>
-            @endif
-        @endforeach
+        @if($properties->count() > 0)
+            @foreach($properties as $property)
+                @if(($loop->iteration - 1) % 4 == 0 || $loop->first)
+                    <div class="columns">
+                @endif
+                @include('properties.card')
+                @if($loop->iteration % 4 == 0 || $loop->last)
+                    </div>
+                @endif
+            @endforeach
+        @else
+            <div class="no-properties-list is-uppercase has-text-centered">
+                <h1>No properties available</h1>
+            </div>
+        @endif
     </div>
     {{ $properties->appends(Request::except('page'))->links() }}
 @endsection

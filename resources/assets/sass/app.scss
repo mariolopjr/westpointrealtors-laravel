@@ -108,6 +108,12 @@ input[type="number"] {
   font-size: 0.8rem;
 }
 
+.no-properties-index {
+  font-size: 2rem;
+  font-spacing: .3rem;
+  font-weight: 100;
+}
+
 /* Equal Card Heights */
 .card-equal-height {
   display: -webkit-box;
@@ -324,6 +330,14 @@ a.nav-item.is-tab {
 }
 
 /* Properties */
+
+.no-properties-list {
+  font-size: 2rem;
+  font-spacing: .3rem;
+  font-weight: 100;
+  margin: 5rem 0;
+}
+
 .navbar.property-nav {
   background-color: #00d1b2;
   color: #fff;
