@@ -23,7 +23,7 @@ Route::get('/', function () {
     if($propertiesCount = count($properties) < 5) {
         $additionalProperties = App\Property::latest()->favorite(false)->active()->get();
 
-        if($additionalProperties > 4) {
+        if(count($additionalProperties) > 4) {
             $start = random_int(0, count($additionalProperties) - (5 - $propertiesCount));
             $additionalProperties = $additionalProperties->slice($start, 4 - $propertiesCount);
         }
