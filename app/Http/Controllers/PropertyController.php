@@ -62,7 +62,7 @@ class PropertyController extends Controller
     {
         $this->validate(request(), [
             'title' => 'required|max:250',
-            'type' => 'required',
+            'type_id' => 'required',
             'address' => 'required',
             'status_id' => 'required',
             'price' => 'required',
@@ -78,7 +78,7 @@ class PropertyController extends Controller
 
         $property = new Property(request([
             'title',
-            'type',
+            'type_id',
             'address',
             'status_id',
             'price',
@@ -108,7 +108,7 @@ class PropertyController extends Controller
 
         $this->validate(request(), [
             'title' => 'required|max:250',
-            'type' => 'required',
+            'type_id' => 'required',
             'address' => 'required',
             'status_id' => 'required',
             'price' => 'required',
@@ -124,7 +124,7 @@ class PropertyController extends Controller
 
         $property->update(request([
             'title',
-            'type',
+            'type_id',
             'address',
             'status_id',
             'price',
