@@ -42,7 +42,7 @@
                                 <span class="item-title">Property Type</span>
                             </div>
                             <div class="column">
-                                <span class="item-data">{{ $property->type }}</span>
+                                <span class="item-data">{{ $property->type->name }}</span>
                             </div>
                             <div class="column">
                                 <span class="item-title">Year</span>

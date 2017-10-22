@@ -18,7 +18,7 @@
             </b-field>
             <b-field label="Property type">
                 <b-select name="type_id" id="type" placeholder="Select property type" required
-                value="{{ $property->type }}">
+                value="{{ $property->type_id }}">
                     <option
                         v-for="type in {!! htmlspecialchars($types->toJson(), ENT_QUOTES, 'UTF-8') !!}"
                         :value="type.id"

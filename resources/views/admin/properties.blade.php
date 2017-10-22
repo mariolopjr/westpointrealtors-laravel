@@ -56,7 +56,7 @@
                     <div class="content">
                         <p>
                             <strong>Property type: </strong>
-                            <small>@{{ props.row.type }}</small>
+                            <small>@{{ props.row.type.name }}</small>
                             <br>
                             <div v-html="props.row.description"></div>
                         </p>
