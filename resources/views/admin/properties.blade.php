@@ -60,7 +60,7 @@
                             <br>
                             <div v-html="props.row.description"></div>
                         </p>
-                        <b-field grouped>
+                        <b-field grouped group-multiline>
                             <div class="control is-flex">
                                 <b-switch
                                 v-on:input="updateProperty($event, props.row.id, 'favorite')"

@@ -4,8 +4,9 @@
             West Point Real Estate
         </a>
 
-        <div class="navbar-burger burger" data-target="main-nav">
-            <span></span>
+        <div class="navbar-burger burger"
+            data-target="main-nav"
+            onclick="document.querySelector('#main-nav').classList.toggle('is-active');document.querySelector('.navbar-burger.burger').classList.toggle('is-active');">
             <span></span>
             <span></span>
             <span></span>

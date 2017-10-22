@@ -743,3 +743,27 @@ footer.site .disclaimer .contact-number:not(:first-of-type) {
 
 /* Responsive Design */
 
+@media screen and (max-width: 1024px) {
+  .container.property-list {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .container > form {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .docs .tab-item {
+    margin: 1rem 1rem;
+  }
+
+  footer.site > .container {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .lower-footer .container {
+    padding: 1rem;
+  }
+}
+
