@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
     <template>
-        <section>
+        <section class="docs">
             <b-tabs position="is-centered">
                 <b-tab-item label="Contract Packages">
                     <template>
@@ -164,12 +164,12 @@
                 </b-tab-item>
 
                 <b-tab-item label="FSM Utility Activation Request Forms">
-                    <p>Provided courtesy of HUD’s Field Services Managers. We do not guarantee accuracy of FSM utility forms and links.</p>
+                    <p class="fsm-warning">Provided courtesy of HUD’s Field Services Managers. We do not guarantee accuracy of FSM utility forms and links.</p>
                     <template>
                         <b-field grouped group-multiline>
                             <div class="control">
                                 <b-taglist attached>
-                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-dark">link</b-tag>
                                     <b-tag type="is-info">
                                         <a href="https://www.prescientfsm.com/pkform.aspx" target="_blank">4A – PK Management Group</a>
                                     </b-tag>
@@ -177,7 +177,7 @@
                             </div>
                             <div class="control">
                                 <b-taglist attached>
-                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-dark">link</b-tag>
                                     <b-tag type="is-info">
                                         <a href="http://www.a2zfieldservices.com/utilityactivation.aspx" target="_blank">7A – A2Z</a>
                                     </b-tag>
@@ -185,7 +185,7 @@
                             </div>
                             <div class="control">
                                 <b-taglist attached>
-                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-dark">link</b-tag>
                                     <b-tag type="is-info">
                                         <a href="http://www.cwis-llc.com/lenders-bankers-re" target="_blank">8A – CWIS</a>
                                     </b-tag>
@@ -196,14 +196,70 @@
                 </b-tab-item>
 
                 <b-tab-item label="Other Forms">
-                    Nunc nec velit nec libero vestibulum eleifend.
-                    Curabitur pulvinar congue luctus.
-                    Nullam hendrerit iaculis augue vitae ornare.
-                    Maecenas vehicula pulvinar tellus, id sodales felis lobortis eget.
+                    <template>
+                        <b-field grouped group-multiline>
+                            <div class="control">
+                                <b-taglist attached>
+                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-info">
+                                        <a href="{{ url('/files/Other Forms/Buyer-Select-Closing-Agent-Form.pdf') }}" target="_blank">Buyer Select Closing Agent Form</a>
+                                    </b-tag>
+                                </b-taglist>
+                            </div>
+                            <div class="control">
+                                <b-taglist attached>
+                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-info">
+                                        <a href="{{ url('/files/Other Forms/LBP-Addendum.pdf') }}" target="_blank">LBP Addendum</a>
+                                    </b-tag>
+                                </b-taglist>
+                            </div>
+                            <div class="control">
+                                <b-taglist attached>
+                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-info">
+                                        <a href="{{ url('/files/Other Forms/203k-Rehabilitation-Financing-Lead-Agreement-HUD-9548-G.pdf') }}" target="_blank">203(k) Rehabilitation Financing Lead Agreement – HUD-9548-G</a>
+                                    </b-tag>
+                                </b-taglist>
+                            </div>
+                            <div class="control">
+                                <b-taglist attached>
+                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-info">
+                                        <a href="{{ url('/files/Other Forms/Owner-Occupant-Certification.pdf') }}" target="_blank">Owner Occupant Certification</a>
+                                    </b-tag>
+                                </b-taglist>
+                            </div>
+                            <div class="control">
+                                <b-taglist attached>
+                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-info">
+                                        <a href="{{ url('/files/Other Forms/EXTENSION-REQUEST-FORM-July-2016.pdf') }}" target="_blank">Extension Request Form</a>
+                                    </b-tag>
+                                </b-taglist>
+                            </div>
+                            <div class="control">
+                                <b-taglist attached>
+                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-info">
+                                        <a href="{{ url('/files/Other Forms/Atlanta-Amendments-Contract-Cancellation-Form-1.pdf') }}" target="_blank">Contract Cancellation Form</a>
+                                    </b-tag>
+                                </b-taglist>
+                            </div>
+                            <div class="control">
+                                <b-taglist attached>
+                                    <b-tag type="is-dark">pdf</b-tag>
+                                    <b-tag type="is-info">
+                                        <a href="{{ url('/files/Other Forms/Vandalism-Change-in-Condition-Report.pdf') }}" target="_blank">Report Vandalism/Change in Condition</a>
+                                    </b-tag>
+                                </b-taglist>
+                            </div>
+                        </b-field>
+                    </template>
                 </b-tab-item>
             </b-tabs>
         </section>
-        <b-notification type="is-success" :closable="false" has-icon>
+        <b-notification type="docs-notification is-success" :closable="false" has-icon>
             To view, complete, and print fillable forms you will need to use Adobe Acrobat Reader, Standard, or Pro 9.0 (or later) for PDF files OR Microsoft Office for DOC files. Adobe Acrobat Reader is available for free and can be downloaded from the following web site: <a href="http://get.adobe.com/reader/" target="_blank">Adobe Reader</a>. Browsers like Google Chrome and Firefox use built-in PDF viewers that are not supported for use with the fillable forms.
         </b-notification>
     </template>

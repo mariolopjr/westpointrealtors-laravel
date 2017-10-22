@@ -646,7 +646,51 @@ footer.site {
   margin-right: .2rem;
 }
 
+.docs {
+  a {
+    color: #fff;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: darken(#f3f3f3, 20%) !important;
+    }
+  }
+
+  .tab-item {
+    margin: 1rem 0px;
+  }
+
+  .fsm-warning {
+    margin-bottom: 0.5rem;
+  }
+
+  .tabs li.is-active a {
+    border-bottom-color: silver;
+    color: silver;
+
+    &:hover {
+      border-bottom-color: #363636;
+      color: #363636;
+    }
+  }
+}
+
+.docs-notification {
+  margin: 2rem 0;
+}
+
+.company-info {
+  h1,
+  h2,
+  span {
+    display: block;
+  }
+}
+
 /* Admin */
 .admin {
   margin: 1rem;
 }
+
+/* Responsive Design */

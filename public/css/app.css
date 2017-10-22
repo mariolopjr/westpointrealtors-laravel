@@ -697,9 +697,49 @@ footer.site .disclaimer .contact-number:not(:first-of-type) {
   margin-right: .2rem;
 }
 
+.docs a {
+  color: #fff;
+}
+
+.docs a:active,
+.docs a:focus,
+.docs a:hover {
+  color: silver !important;
+}
+
+.docs .tab-item {
+  margin: 1rem 0px;
+}
+
+.docs .fsm-warning {
+  margin-bottom: 0.5rem;
+}
+
+.docs .tabs li.is-active a {
+  border-bottom-color: silver;
+  color: silver;
+}
+
+.docs .tabs li.is-active a:hover {
+  border-bottom-color: #363636;
+  color: #363636;
+}
+
+.docs-notification {
+  margin: 2rem 0;
+}
+
+.company-info h1,
+.company-info h2,
+.company-info span {
+  display: block;
+}
+
 /* Admin */
 
 .admin {
   margin: 1rem;
 }
+
+/* Responsive Design */
 

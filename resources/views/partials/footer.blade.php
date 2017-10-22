@@ -1,11 +1,13 @@
 <footer class="site">
     <div class="container">
         <div class="columns">
-            <div class="column is-one-third">
+            <div class="company-info column is-one-third">
                 <h1 class="title">West Point Real Estate</h1>
                 <h2 class="subtitle">A Real Estate Brokerage</h2>
-                <span class="address">8 Beverly Hills Boulevard, Beverly Hills, Florida</span>
-                <span class="contact-number">(352) 462-0414</span> <span class="contact-number">1 (800) 418-4261</span>
+                <span class="address">8 Beverly Hills Boulevard</span>
+                <span class="address">Beverly Hills, Florida</span>
+                <span class="contact-number">(352) 462-0414</span>
+                <span class="contact-number">1 (800) 418-4261</span>
                 <span class="email">westpointagents@gmail.com</span>
             </div>
             <div class="column is-one-third is-offset-one-third disclaimer">
