@@ -16,7 +16,7 @@
                 <b-input type="text" name="title" id="title" required></b-input>
             </b-field>
             <b-field label="Property type">
-                <b-select name="type" id="type" placeholder="Select property type" required>
+                <b-select name="type_id" id="type" placeholder="Select property type" required>
                     <option
                         v-for="type in {!! htmlspecialchars($types->toJson(), ENT_QUOTES, 'UTF-8') !!}"
                         :value="type.id"
@@ -80,6 +80,7 @@
                     name="bedrooms"
                     id="bedrooms"
                     min="0"
+                    step="0.1"
                     inputmode="numeric"
                     required>
                 </b-input>
@@ -90,6 +91,7 @@
                     name="bathrooms"
                     id="bathrooms"
                     min="0"
+                    step="0.1"
                     inputmode="numeric"
                     required>
                 </b-input>
@@ -100,6 +102,7 @@
                     name="garages"
                     id="garages"
                     min="0"
+                    step="0.1"
                     inputmode="numeric"
                     required>
                 </b-input>
