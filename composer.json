@@ -18,6 +18,7 @@
         "laracasts/utilities": "^3.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.4",
         "spatie/laravel-medialibrary": "^6.0.0"
     },
     "require-dev": {
@@ -26,7 +27,6 @@
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.7",
         "jrl05k/laravel-under-construction": "dev-master",
-        "laravelcollective/html": "^5.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~6"
     },
