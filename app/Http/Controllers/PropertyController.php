@@ -73,7 +73,8 @@ class PropertyController extends Controller
             'bathrooms' => 'required',
             'garages' => 'required',
             'year' => 'required',
-            'hoa_fees' => 'required'
+            'hoa_fees' => 'required',
+            'files|mimes:jpeg,bmp,png'
         ]);
 
         $property = new Property(request([
@@ -99,7 +100,7 @@ class PropertyController extends Controller
             });
         $property->save();
 
-        return redirect('/');
+        return redirect('/admin/property');
     }
 
     public function update(Request $request, $id)
@@ -119,7 +120,8 @@ class PropertyController extends Controller
             'bathrooms' => 'required',
             'garages' => 'required',
             'year' => 'required',
-            'hoa_fees' => 'required'
+            'hoa_fees' => 'required',
+            'files|mimes:jpeg,bmp,png'
         ]);
 
         $property->update(request([
@@ -138,6 +140,11 @@ class PropertyController extends Controller
             'hoa_fees'
         ]));
         $property->user_id = auth()->id();
+        $fileAdders = $property
+            ->addAllMediaFromRequest()
+            ->each(function ($fileAdder) {
+                $fileAdder->toMediaCollection('images', 'images');
+            });
         $property->save();
 
         return redirect('/admin/property');

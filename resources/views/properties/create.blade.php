@@ -133,9 +133,9 @@
             <section>
                 <b-field>
                     <b-upload v-model="dropFiles"
+                        accept="image/*"
                         name="files[]"
-                        multiple
-                        drag-drop>
+                        multiple>
                         <section class="section">
                             <div class="content has-text-centered">
                                 <p>
@@ -144,7 +144,7 @@
                                         size="is-large">
                                     </b-icon>
                                 </p>
-                                <p>Drop your files here or click to upload</p>
+                                <p>Click to upload</p>
                             </div>
                         </section>
                     </b-upload>
