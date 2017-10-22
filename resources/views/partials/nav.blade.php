@@ -27,10 +27,10 @@
                 Contact
             </a>--}}
         </div>
-        {{-- <div class="navbar-end">
-            @guest
+        <div class="navbar-end">
+            {{-- @guest
                 <a class="navbar-item" href="{{ url('/login') }}">Login</a>
-            @endauth
+            @endauth --}}
             @auth
                 <div class="navbar-item has-dropdown is-hoverable">
                     <div class="navbar-link">
@@ -46,9 +46,9 @@
                                 Admin
                             </a>
                         @endif
-                        <a class="navbar-item" href="">
+                        {{-- <a class="navbar-item" href="">
                             Profile
-                        </a>
+                        </a> --}}
                         <hr class="navbar-divider">
                         <a
                             class="navbar-item"
@@ -64,6 +64,6 @@
                     {{ csrf_field() }}
                 </form>
             @endauth
-        </div> --}}
+        </div>
     </div>
 </nav>
