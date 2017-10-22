@@ -28,6 +28,14 @@ Route::get('/', function () {
     return view('index', compact('properties'));
 });
 
+Route::get('/forms', function () {
+    return view('docs');
+});
+
+Route::get('/forms/{file}', function () {
+    return response()->file('/public/files/' . $file);
+});
+
 // Properties
 Route::group(['prefix' => 'properties', 'as' => 'properties.'], function () {
     Route::get('/', 'PropertyController@index')

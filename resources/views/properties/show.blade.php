@@ -111,21 +111,33 @@
                         <form method="POST" action="{{ url('/properties/' . $property->slug) }}" id="contact-form">
                             {{ csrf_field() }}
                             <b-field>
-                                <b-input name="name" placeholder="Your name"></b-input>
+                                <b-input name="name" placeholder="Your name" required></b-input>
                             </b-field>
                             <b-field>
-                                <b-input name="email" type="email" placeholder="Your email"></b-input>
+                                <b-input name="email" type="email" placeholder="Your email" required></b-input>
                             </b-field>
                             <b-field>
-                                <b-input name="number" placeholder="Your contact Number"></b-input>
+                                <b-input name="number" placeholder="Your contact Number" required></b-input>
                             </b-field>
                             <b-field>
                                 <b-input name="message" maxlength="200" type="textarea" placeholder="Hi! I am interested in the property because..."></b-input>
                             </b-field>
+                            <div class="g-recaptcha"
+                                data-sitekey="{{ env('RECAPTCHA_SITE') }}"
+                                data-callback="submitContactForm"
+                                data-size="invisible">
+                            </div>
+                            @if (count($errors) > 0)
+                                @foreach ($errors->all() as $error)
+                                    <div class="notification is-danger">
+                                        {{ $error }}
+                                    </div>
+                                @endforeach
+                            @endif
                         </form>
                     </div>
                     <footer class="card-footer">
-                        <p class="card-footer-item" @click="submitForm($event, 'contact-form')">
+                        <p class="card-footer-item" @click="validateForm($event)">
                             <span>
                                 Send message
                             </span>

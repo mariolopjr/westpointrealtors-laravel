@@ -1280,9 +1280,10 @@ var app = new Vue({
       axios.get('/admin/property/' + propertyId + '/picture/' + imageId + '/delete');
       e.target.parentElement.className += " hidden";
     },
-    submitForm: function submitForm(e, form) {
+    validateForm: function validateForm(e) {
       e.preventDefault();
-      document.getElementById(form).submit();
+      grecaptcha.reset();
+      grecaptcha.execute();
     }
   }
 });

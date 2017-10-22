@@ -15,7 +15,7 @@ class PropertyController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show', 'status', 'type']);
+        $this->middleware('auth')->except(['index', 'contact', 'show', 'status', 'type']);
     }
 
     /**
@@ -179,6 +179,27 @@ class PropertyController extends Controller
 
     public function contact(Request $request, Property $property)
     {
+        $this->validate(request(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'number' => 'required',
+            'message' => 'max:200',
+            'g-recaptcha-response' => 'required'
+        ]);
+
+        if(isset($_POST['g-recaptcha-response'])) {
+            $secretKey = env('RECAPTCHA_SECRET');
+            $response = $_POST['g-recaptcha-response'];
+            $remoteIp = $_SERVER['REMOTE_ADDR'];
+
+            $reCaptchaValidationUrl = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$response&remoteip=$remoteIp");
+            $result = json_decode($reCaptchaValidationUrl, TRUE);
+
+            if(!$result['success'] == 1) {
+                return redirect()->back()->withInput()->withErrors(['g-recaptcha' => 'You failed the Google ReCAPTCHA Bot Checker']);
+            }
+        }
+
         \Mail::to('westpointagents@gmail.com')->send(new PropertyContact($request, $property));
         \Mail::to($request->email)->send(new PropertyCustomer($request, $property));
         return new PropertyContactSuccess($request, $property);

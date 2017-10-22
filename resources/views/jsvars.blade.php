@@ -43,7 +43,6 @@ function initMap() {
           console.log("No results found");
         }
       } else {
-        console.log(address);
         console.log(`Geocode was not successful for the following reason: ${status}`);
       }
     });
@@ -97,6 +96,10 @@ function geolocate() {
 
 function insertInput(responseText) {
     document.getElementById('new-property').append('<input type="hidden" name="files[]" value="'+ responseText +'">');
+}
+
+function submitContactForm() {
+    document.getElementById('contact-form').submit();
 }
 
 tinymce.init({

@@ -68,9 +68,10 @@ const app = new Vue({
         e.target.parentElement.className += " hidden";
       },
 
-      submitForm(e, form) {
+      validateForm(e) {
         e.preventDefault();
-        document.getElementById(form).submit();
+        grecaptcha.reset();
+        grecaptcha.execute();
       }
     }
 });
