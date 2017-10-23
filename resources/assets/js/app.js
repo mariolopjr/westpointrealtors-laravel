@@ -54,7 +54,7 @@ const app = new Vue({
       },
 
       toDate(date) {
-        return new Date(date).toLocaleDateString()
+        return new Date(date.replace(/-/g, "/")).toLocaleDateString()
       },
 
       updateProperty(e, id, prop) {
