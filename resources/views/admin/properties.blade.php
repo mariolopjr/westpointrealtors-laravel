@@ -82,7 +82,7 @@
                                 </b-switch>
                             </div>
                             <p class="control">
-                                <a class="button is-primary" :href="'/admin/property/' + props.row.id + '/edit'" target="_blank">
+                                <a class="button is-primary" :href="'/admin/property/' + props.row.id + '/edit'">
                                     Edit
                                 </a>
                             </p>
