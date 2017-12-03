@@ -1,6 +1,20 @@
 @extends('layouts.frontend')
 
-@section('pageTitle', $property->title . '- West Point Real Estate')
+@section('pageTitle', "$property->address | West Point Real Estate")
+
+@section('propertyMeta')
+    <meta name="description" content="West Point Real Estate has {{ count($property->getMedia('images')) }} photos of
+        this ${{ number_format($property->price, 2) }} {{ $property->bedrooms }}
+        bed, {{ $property->bathrooms }} bath,
+        {{ number_format($property->home_size, 2, '.', ',') }} sqft single
+        family home located at {{ $property->address }} built in
+        {{ date('Y', strtotime($property->year)) }}.">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="{{ URL::current() }}">
+    <meta property="og:title" content="{{ $property->address }} | West Point Real Estate">
+    <meta property="og:image" content="{{ url($property->getFirstMediaUrl('images', 'thumb')) }}">
+    <meta property="og:description" content="{!! $property->description !!}">
+@endsection
 
 @section('content')
     <div class="container house">
